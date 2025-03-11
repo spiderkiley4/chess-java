@@ -1,6 +1,6 @@
 package com.jeremy.chess.model;
 
-public class Move {
+public class ChessMove {
     private String from;
     private String to;
 

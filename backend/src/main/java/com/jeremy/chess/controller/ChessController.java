@@ -1,10 +1,8 @@
 package com.jeremy.chess.controller;
 
-import com.jeremy.chess.model.Move;
-import com.jeremy.chess.service.ChessService;
+import com.jeremy.chess.model.ChessMove;
+import com.jeremy.chess.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,16 +10,15 @@ import org.springframework.web.bind.annotation.*;
 public class ChessController {
 
     @Autowired
-    private ChessService chessService;
+    private com.chess.service.ChessService chessService;
 
-    @PostMapping("/move")
-    public String makeMove(@RequestBody Move move) {
-        return chessService.makeMove(move);
+    @GetMapping("/state")
+    public String getBoardState() {
+        return chessService.getBoardState();
     }
 
-    @MessageMapping("/move")
-    @SendTo("/topic/game")
-    public Move broadcastMove(Move move) {
-        return move;
+    @PostMapping("/move")
+    public String makeMove(@RequestBody ChessMove move) {
+        return chessService.makeMove(move);
     }
 }
