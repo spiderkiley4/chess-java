@@ -1,12 +1,11 @@
 package com.jeremy.chess.service;
 
-import com.github.bhlangonijr.chesslib.Board;
-import com.github.bhlangonijr.chesslib.move.Move;
-import com.github.bhlangonijr.chesslib.Square;
 import com.jeremy.chess.model.ChessMove;
 import com.jeremy.chess.model.Lobby;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,32 +19,29 @@ public class ChessService {
         return lobby;
     }
 
-    public String getBoardState(String lobbyId) {
+    public ArrayList<String> getBoardState(String lobbyId) {
         Lobby lobby = lobbies.get(lobbyId);
-        return lobby != null ? lobby.getBoardState() : "Lobby not found!";
+        return lobby != null ? lobby.getBoardState() : null;
     }
 
-    public String makeMove(String lobbyId, ChessMove chessMove) {
+    public ArrayList<String> makeMove(String lobbyId, ChessMove chessMove) {
         Lobby lobby = lobbies.get(lobbyId);
         if (lobby == null) {
-            return "Lobby not found!";
+            return null;
         }
 
         try {
-            Board board = new Board();
-            board.loadFromFen(lobby.getBoardState());
-
-            Move move = new Move(
-                    Square.valueOf(chessMove.getFrom().toUpperCase()),
-                    Square.valueOf(chessMove.getTo().toUpperCase())
-            );
-
-            board.doMove(move);
-            String newBoardState = board.getFen();
-            lobby.setBoardState(newBoardState);
-            return newBoardState;
+            
+            ArrayList<String> boardState = lobby.getBoardState();
+            
+            lobby.setBoardState(boardState);
+            return boardState;
         } catch (Exception e) {
-            return "Invalid move: " + e.getMessage();
+            return null;
         }
+    }
+
+    public Collection<Lobby> getLobbies() {
+        return lobbies.values();
     }
 }
