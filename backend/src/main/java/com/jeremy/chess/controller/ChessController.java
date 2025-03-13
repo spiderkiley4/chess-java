@@ -24,6 +24,7 @@ public class ChessController {
 
     @GetMapping("/state/{lobbyId}")
     public ArrayList<String> getBoardState(@PathVariable String lobbyId) {
+        System.err.println(chessService.getBoardState(lobbyId));
         return chessService.getBoardState(lobbyId);
     }
 

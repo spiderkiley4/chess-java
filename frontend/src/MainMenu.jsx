@@ -12,7 +12,8 @@ const ChessBoard = ({ lobbyId }) => {
             if (!response.ok) {
                 throw new Error("Failed to fetch board state");
             }
-            const fen = await response.text();
+            const fen = await response.json();
+            console.log(fen);
             setPosition(fen);
         } catch (error) {
             console.error("Error fetching board state:", error);
@@ -25,8 +26,9 @@ const ChessBoard = ({ lobbyId }) => {
     }, [lobbyId]);
 
     // Send move to backend and update board state
-    const handleMove = async (sourceSquare, targetSquare) => {
+    const handleMove = async (sourceSquare, targetSquare, piece) => {
         try {
+            console.log(`Move ${piece} from ${sourceSquare} to ${targetSquare}`);
             const response = await fetch(`http://localhost:8080/game/move/${lobbyId}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -37,7 +39,7 @@ const ChessBoard = ({ lobbyId }) => {
                 throw new Error("Failed to send move");
             }
 
-            const fen = await response.text();
+            const fen = await response.json();
             if (fen !== "Invalid move!") {
                 setPosition(fen);
             } else {
@@ -70,6 +72,7 @@ const MainMenu = () => {
                 throw new Error("Failed to create lobby");
             }
             const lobby = await response.json();
+            console.log(lobby);
             setLobbyId(lobby.id);
         } catch (error) {
             console.error("Error creating lobby:", error);

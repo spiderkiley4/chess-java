@@ -1,0 +1,25 @@
+2025-03-13 09:00:22 - c.jeremy.chess.ChessGameApplication - Starting ChessGameApplication using Java 21.0.6 with PID 68600 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-13 09:00:22 - c.jeremy.chess.ChessGameApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-13 09:00:22 - c.jeremy.chess.ChessGameApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 09:00:23 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-13 09:00:23 - o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 09:00:23 - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 09:00:23 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-13 09:00:23 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 09:00:23 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 607 ms
+2025-03-13 09:00:23 - o.s.m.s.b.SimpleBrokerMessageHandler - Starting...
+2025-03-13 09:00:23 - o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4570d7b6]]
+2025-03-13 09:00:23 - o.s.m.s.b.SimpleBrokerMessageHandler - Started.
+2025-03-13 09:00:23 - o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 09:00:23 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-13 09:00:23 - c.jeremy.chess.ChessGameApplication - Started ChessGameApplication in 1.599 seconds (process running for 1.992)
+2025-03-13 09:00:35 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 09:00:35 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 09:00:35 - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-13 09:00:37 - com.jeremy.chess.model.Lobby - Lobby created with ID: 4ac2de1b-ce47-4b28-b374-9615a0b7a3e1
+2025-03-13 09:00:37 - com.jeremy.chess.model.Lobby - Initial board state: [r, n, b, q, k, b, n, r, p, p, p, p, p, p, p, p, , , , , , , , , , , , P, , , , , , , , , , , , , , , , , , , , , P, P, P, P, P, P, P, P, R, N, B, Q, K, B, N, R]
+2025-03-13 09:00:56 - o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-13 09:00:56 - o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-13 09:00:56 - o.s.m.s.b.SimpleBrokerMessageHandler - Stopping...
+2025-03-13 09:00:56 - o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4570d7b6]]
+2025-03-13 09:00:56 - o.s.m.s.b.SimpleBrokerMessageHandler - Stopped.

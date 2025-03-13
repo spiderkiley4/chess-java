@@ -1,5 +1,7 @@
 package com.jeremy.chess.model;
 
+import com.jeremy.chess.util.ChessUtils;
+
 public class ChessMove {
     private String from;
     private String to;
@@ -19,5 +21,13 @@ public class ChessMove {
 
     public void setTo(String to) {
         this.to = to;
+    }
+
+    public int getSourceIndex() {
+        return ChessUtils.notationToIndex(from);
+    }
+
+    public int getTargetIndex() {
+        return ChessUtils.notationToIndex(to);
     }
 }
