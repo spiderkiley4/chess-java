@@ -23,16 +23,34 @@ const ChessBoard = ({ lobbyId }) => {
 
     useEffect(() => {
         fetchBoardState(); // Load the board when the component mounts
+
+        const handleBeforeUnload = async (event) => {
+            event.preventDefault();
+            await fetch(`http://localhost:8080/game/disconnect/${lobbyId}`, {
+                method: "POST",
+            });
+        };
+
+        window.addEventListener("beforeunload", handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
     }, [lobbyId]);
 
+    const logBoard = (pos) => {
+        console.log("Board pos: ");
+        console.log(pos);
+    }
+
     // Send move to backend and update board state
-    const handleMove = async (sourceSquare, targetSquare, piece) => {
+    const handleMove = async (sourceSquare, targetSquare, piece, promotion = null) => {
         try {
-            console.log(`Move ${piece} from ${sourceSquare} to ${targetSquare}`);
+            console.log(`Move ${piece} from ${sourceSquare} to ${targetSquare} with promotion ${promotion}`);
             const response = await fetch(`http://localhost:8080/game/move/${lobbyId}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ from: sourceSquare, to: targetSquare }),
+                body: JSON.stringify({ from: sourceSquare, to: targetSquare, promotion }),
             });
 
             if (!response.ok) {
@@ -51,10 +69,20 @@ const ChessBoard = ({ lobbyId }) => {
         }
     };
 
+    const handlePromotionPieceSelect = (piece, promoteFromSquare, promoteToSquare) => {
+        handleMove(promoteFromSquare, promoteToSquare, piece, piece);
+        return true;
+    };
+
     return (
         <div style={{ width: "500px", margin: "auto" }}>
             {error && <div style={{ color: "red" }}>{error}</div>}
-            <Chessboard position={position} onPieceDrop={handleMove} />
+            <Chessboard
+                position={position}
+                getPositionObject={logBoard}
+                onPieceDrop={handleMove}
+                onPromotionPieceSelect={handlePromotionPieceSelect}
+            />
         </div>
     );
 };

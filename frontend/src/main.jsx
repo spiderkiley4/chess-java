@@ -4,7 +4,5 @@ import './index.css'
 import MainMenu from './MainMenu.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <MainMenu />
-  </StrictMode>,
 )

@@ -6,7 +6,7 @@ import com.jeremy.chess.service.ChessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.Map;
 import java.util.Collection;
 
 @CrossOrigin(origins = "http://localhost:5173") // Allow frontend requests
@@ -23,18 +23,22 @@ public class ChessController {
     }
 
     @GetMapping("/state/{lobbyId}")
-    public ArrayList<String> getBoardState(@PathVariable String lobbyId) {
-        System.err.println(chessService.getBoardState(lobbyId));
+    public Map<String, String> getBoardState(@PathVariable String lobbyId) {
         return chessService.getBoardState(lobbyId);
     }
 
     @PostMapping("/move/{lobbyId}")
-    public ArrayList<String> makeMove(@PathVariable String lobbyId, @RequestBody ChessMove move) {
+    public Map<String, String> makeMove(@PathVariable String lobbyId, @RequestBody ChessMove move) {
         return chessService.makeMove(lobbyId, move);
     }
 
     @GetMapping("/lobbies")
     public Collection<Lobby> getLobbies() {
         return chessService.getLobbies();
+    }
+
+    @PostMapping("/disconnect/{lobbyId}")
+    public void disconnect(@PathVariable String lobbyId) {
+        chessService.disconnect(lobbyId);
     }
 }
