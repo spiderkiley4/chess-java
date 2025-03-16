@@ -1,0 +1,136 @@
+package com.jeremy.chess.controller;
+
+import com.jeremy.chess.model.ChessMove;
+import com.jeremy.chess.model.GameMessage;
+import com.jeremy.chess.model.ChatMessage;
+import com.jeremy.chess.model.Lobby;
+import com.jeremy.chess.service.ChessService;
+import com.jeremy.chess.util.MoveParser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+import org.springframework.stereotype.Controller;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
+
+import java.util.Map;
+import java.util.Collection;
+import java.util.HashMap;
+
+@Controller
+public class ChessWebSocketController {
+
+    @Autowired
+    private ChessService chessService;
+    
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
+    @MessageMapping("/move")
+    @SendTo("/topic/game")
+    public GameMessage handleMove(GameMessage message, SimpMessageHeaderAccessor headerAccessor) {
+        String playerId = headerAccessor.getSessionId();
+        ChessMove move = convertToChessMove(message.getContent());
+        Map<String, String> newState = chessService.makeMove(message.getLobbyId(), move, playerId);
+        
+        if (newState != null) {
+            // Send lobby update after move
+            sendLobbyUpdate();
+            
+            // Get the updated turn state
+            boolean isWhiteTurn = chessService.isWhiteTurn(message.getLobbyId());
+            return new GameMessage(message.getLobbyId(), "MOVE", newState, isWhiteTurn);
+        }
+        return null;
+    }
+
+    @MessageMapping("/join")
+    @SendTo("/topic/game")
+    public GameMessage handleJoin(GameMessage message, SimpMessageHeaderAccessor headerAccessor) {
+        String playerId = headerAccessor.getSessionId();
+        chessService.joinLobby(message.getLobbyId(), playerId);
+        Map<String, String> boardState = chessService.getBoardState(message.getLobbyId());
+        
+        // Send lobby update after join
+        sendLobbyUpdate();
+        
+        // Send player information and turn state
+        Map<String, Object> gameState = new HashMap<>();
+        gameState.put("boardState", boardState);
+        gameState.put("players", Map.of(
+            "whitePlayerId", chessService.getWhitePlayerId(message.getLobbyId()) != null ? 
+                chessService.getWhitePlayerId(message.getLobbyId()) : "",
+            "blackPlayerId", chessService.getBlackPlayerId(message.getLobbyId()) != null ? 
+                chessService.getBlackPlayerId(message.getLobbyId()) : ""
+        ));
+        
+        return new GameMessage(message.getLobbyId(), "STATE", gameState, chessService.isWhiteTurn(message.getLobbyId()));
+    }
+
+    @MessageMapping("/chat")
+    @SendTo("/topic/game")
+    public GameMessage handleChat(GameMessage message) {
+        String lobbyId = message.getLobbyId();
+        Lobby lobby = chessService.getLobby(lobbyId);
+        if (lobby == null) {
+            throw new IllegalArgumentException("Lobby not found: " + lobbyId);
+        }
+
+        // Forward the chat message to all players in the lobby
+        return new GameMessage(
+            lobbyId,
+            "CHAT",
+            message.getContent(),
+            lobby.isWhiteTurn()
+        );
+    }
+
+    @MessageMapping("/chat/{lobbyId}")
+    @SendTo("/topic/chat/{lobbyId}")
+    public ChatMessage handleChatMessage(@DestinationVariable String lobbyId, ChatMessage message) {
+        return message;
+    }
+
+    @MessageMapping("/claim")
+    @SendTo("/topic/game")
+    public GameMessage handleClaim(GameMessage message, SimpMessageHeaderAccessor headerAccessor) {
+        String playerId = headerAccessor.getSessionId();
+        String color = (String) message.getContent();
+        boolean success = chessService.claimColor(message.getLobbyId(), playerId, color);
+        
+        if (success) {
+            Map<String, String> players = Map.of(
+                "whitePlayerId", chessService.getWhitePlayerId(message.getLobbyId()) != null ? 
+                    chessService.getWhitePlayerId(message.getLobbyId()) : "",
+                "blackPlayerId", chessService.getBlackPlayerId(message.getLobbyId()) != null ? 
+                    chessService.getBlackPlayerId(message.getLobbyId()) : ""
+            );
+            return new GameMessage(message.getLobbyId(), "PLAYERS", players, chessService.isWhiteTurn(message.getLobbyId()));
+        }
+        return null;
+    }
+
+    @MessageMapping("/lobbies")
+    @SendTo("/topic/lobbies")
+    public Collection<Lobby> sendLobbyUpdate() {
+        return chessService.getLobbies();
+    }
+
+    private ChessMove convertToChessMove(Object content) {
+        try {
+            if (content instanceof Map) {
+                return objectMapper.convertValue(content, ChessMove.class);
+            } else if (content instanceof ChessMove) {
+                return (ChessMove) content;
+            }
+            throw new IllegalArgumentException("Invalid move format");
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Failed to convert move: " + e.getMessage());
+        }
+    }
+
+    private GameMessage createChatMessage(String lobbyId, String playerId, String content) {
+        ChatMessage chatMessage = new ChatMessage("Player " + playerId, content);
+        return new GameMessage(lobbyId, "CHAT", chatMessage, chessService.isWhiteTurn(lobbyId));
+    }
+} 

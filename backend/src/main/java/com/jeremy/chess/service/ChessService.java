@@ -10,16 +10,24 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class ChessService {
     private static final Logger logger = LoggerFactory.getLogger(ChessService.class);
     private final Map<String, Lobby> lobbies = new HashMap<>();
+    private final Map<String, String> playerColors = new HashMap<>();
 
-    public Lobby createLobby() {
-        Lobby lobby = new Lobby();
+    public Lobby createLobby(String name) {
+        logger.info("Creating lobby with name: {}", name);
+        Lobby lobby = new Lobby(name);
+        logger.info("Created lobby: id={}, name={}", lobby.getId(), lobby.getName());
         lobbies.put(lobby.getId(), lobby);
         return lobby;
+    }
+
+    public Lobby createLobby() {
+        return createLobby("Unnamed Lobby");
     }
 
     public Map<String, String> getBoardState(String lobbyId) {
@@ -33,30 +41,59 @@ public class ChessService {
         }
     }
 
-    public Map<String, String> makeMove(String lobbyId, ChessMove chessMove) {
+    public Map<String, String> makeMove(String lobbyId, ChessMove chessMove, String playerId) {
         try {
             Lobby lobby = lobbies.get(lobbyId);
             if (lobby == null) {
                 throw new IllegalArgumentException("Lobby not found");
             }
+
+            // Verify it's the player's turn
+            boolean isWhiteTurn = lobby.isWhiteTurn();
+            if ((isWhiteTurn && !playerId.equals(lobby.getWhitePlayerId())) ||
+                (!isWhiteTurn && !playerId.equals(lobby.getBlackPlayerId()))) {
+                logger.warn("Player {} attempted to move out of turn in lobby {}", playerId, lobbyId);
+                return convertBoardStateToMap(lobby.getBoardState());
+            }
+
             ArrayList<String> boardState = lobby.getBoardState();
             
             // Update the board state based on the move
-            int sourceIndex = chessMove.getSourceIndex();
-            int targetIndex = chessMove.getTargetIndex();
-            String piece = boardState.get(sourceIndex);
-            
-            boardState.set(sourceIndex, ""); // Clear the source square
-            if (chessMove.getPromotion() != null && piece.equals("wP") && targetIndex < 8) {
-                piece = chessMove.getPromotion(); // Promote white pawn
-            } else if (chessMove.getPromotion() != null && piece.equals("bP") && targetIndex >= 56) {
-                piece = chessMove.getPromotion(); // Promote black pawn
+            String piece = boardState.get(convertSquareToIndex(chessMove.getFrom()));
+            if (piece.isEmpty()) {
+                logger.warn("No piece at source square {} in lobby {}", chessMove.getFrom(), lobbyId);
+                return convertBoardStateToMap(boardState);
             }
-            boardState.set(targetIndex, piece); // Move the piece to the target square
             
+            // Verify piece color matches player's color
+            boolean isWhitePiece = piece.startsWith("w");
+            if ((isWhitePiece && !playerId.equals(lobby.getWhitePlayerId())) ||
+                (!isWhitePiece && !playerId.equals(lobby.getBlackPlayerId()))) {
+                logger.warn("Player {} attempted to move opponent's piece in lobby {}", playerId, lobbyId);
+                return convertBoardStateToMap(boardState);
+            }
+
+            // Handle promotion
+            String newPiece = piece;
+            if (chessMove.getPromotion() != null) {
+                char color = isWhitePiece ? 'w' : 'b';
+                if ((isWhitePiece && chessMove.getTo().charAt(1) == '8' && piece.endsWith("P")) ||
+                    (!isWhitePiece && chessMove.getTo().charAt(1) == '1' && piece.endsWith("P"))) {
+                    newPiece = color + chessMove.getPromotion();
+                    logger.info("Promoting {} pawn to {}", color, chessMove.getPromotion());
+                }
+            }
+
+            // Make the move
+            boardState.set(convertSquareToIndex(chessMove.getFrom()), "");
+            boardState.set(convertSquareToIndex(chessMove.getTo()), newPiece);
+            
+            // Update board state and toggle turn
             lobby.setBoardState(boardState);
-            logger.info("Move made in lobby {}: {} to {}", lobbyId, chessMove.getFrom(), chessMove.getTo());
-            logger.info("Updated board state for lobby {}: {}", lobbyId, boardState);
+            logger.info("Move made in lobby {}: {} to {}, next turn: {}", 
+                lobbyId, chessMove.getFrom(), chessMove.getTo(), 
+                lobby.isWhiteTurn() ? "white" : "black");
+            
             return convertBoardStateToMap(boardState);
         } catch (Exception e) {
             logger.error("Error making move in lobby {}: {}", lobbyId, e.getMessage());
@@ -68,14 +105,76 @@ public class ChessService {
         return lobbies.values();
     }
 
-    public void disconnect(String lobbyId) {
+    public Lobby getLobby(String lobbyId) {
+        return lobbies.get(lobbyId);
+    }
+
+    public void joinLobby(String lobbyId, String playerId) {
         Lobby lobby = lobbies.get(lobbyId);
         if (lobby != null) {
+            logger.info("Player {} joined lobby {}", playerId, lobbyId);
+            // Don't automatically assign colors - let players claim them
+        }
+    }
+
+    public void disconnect(String lobbyId, String playerId) {
+        Lobby lobby = lobbies.get(lobbyId);
+        if (lobby != null) {
+            playerColors.remove(playerId);
             lobbies.remove(lobbyId);
-            logger.info("Lobby {} removed due to user disconnection", lobbyId);
+            logger.info("Player {} disconnected from lobby {}", playerId, lobbyId);
         } else {
             logger.warn("Lobby {} not found for disconnection", lobbyId);
         }
+    }
+
+    public String getWhitePlayerId(String lobbyId) {
+        Lobby lobby = lobbies.get(lobbyId);
+        return lobby != null ? lobby.getWhitePlayerId() : null;
+    }
+
+    public String getBlackPlayerId(String lobbyId) {
+        Lobby lobby = lobbies.get(lobbyId);
+        return lobby != null ? lobby.getBlackPlayerId() : null;
+    }
+
+    public boolean claimColor(String lobbyId, String playerId, String color) {
+        Lobby lobby = lobbies.get(lobbyId);
+        if (lobby == null) {
+            logger.warn("Attempt to claim color in non-existent lobby: {}", lobbyId);
+            return false;
+        }
+
+        // If player already has the other color, prevent claiming both colors
+        if ("white".equalsIgnoreCase(color) && playerId.equals(lobby.getBlackPlayerId())) {
+            logger.warn("Player {} attempted to claim white while already being black", playerId);
+            return false;
+        }
+        if ("black".equalsIgnoreCase(color) && playerId.equals(lobby.getWhitePlayerId())) {
+            logger.warn("Player {} attempted to claim black while already being white", playerId);
+            return false;
+        }
+
+        if ("white".equalsIgnoreCase(color)) {
+            if (lobby.getWhitePlayerId() == null || lobby.getWhitePlayerId().equals(playerId)) {
+                lobby.setWhitePlayerId(playerId);
+                logger.info("Player {} claimed white in lobby {}", playerId, lobbyId);
+                return true;
+            }
+        } else if ("black".equalsIgnoreCase(color)) {
+            if (lobby.getBlackPlayerId() == null || lobby.getBlackPlayerId().equals(playerId)) {
+                lobby.setBlackPlayerId(playerId);
+                logger.info("Player {} claimed black in lobby {}", playerId, lobbyId);
+                return true;
+            }
+        }
+        logger.warn("Player {} failed to claim {} in lobby {}", playerId, color, lobbyId);
+        return false;
+    }
+
+    public boolean isWhiteTurn(String lobbyId) {
+        Lobby lobby = lobbies.get(lobbyId);
+        return lobby != null && lobby.isWhiteTurn();
     }
 
     private Map<String, String> convertBoardStateToMap(ArrayList<String> boardState) {
@@ -96,5 +195,11 @@ public class ChessService {
             }
         }
         return boardMap;
+    }
+
+    private int convertSquareToIndex(String square) {
+        int file = square.charAt(0) - 'a';
+        int rank = 8 - Character.getNumericValue(square.charAt(1));
+        return rank * 8 + file;
     }
 }

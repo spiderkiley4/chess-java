@@ -5,7 +5,16 @@ import com.jeremy.chess.util.ChessUtils;
 public class ChessMove {
     private String from;
     private String to;
-    private String promotion; // Add this field
+    private String promotion;
+
+    public ChessMove() {
+    }
+
+    public ChessMove(String from, String to, String promotion) {
+        this.from = from;
+        this.to = to;
+        this.promotion = promotion;
+    }
 
     // Getters and setters
     public String getFrom() {
