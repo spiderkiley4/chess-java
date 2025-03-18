@@ -320,7 +320,7 @@ const MainMenu = () => {
     }, []);
 
     return (
-        <div className="container mx-auto p-5">
+        <div className="w-screen h-screen mx-auto p-5">
             {lobbyId ? (
                 <ChessBoard lobbyId={lobbyId} />
             ) : (
@@ -351,7 +351,6 @@ const MainMenu = () => {
                                     <span className="block text-lg font-semibold">{lobby.name}</span>
                                     <span className="text-sm text-gray-600">
                                         ID: {lobby.id.substring(0, 8)}
-                                        {" • "}
                                         Players: {
                                             (lobby.whitePlayerId ? 1 : 0) + 
                                             (lobby.blackPlayerId ? 1 : 0)

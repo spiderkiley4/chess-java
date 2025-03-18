@@ -15,7 +15,7 @@ public class Lobby {
     private String blackPlayerId;
     private boolean isWhiteTurn = true;
     private ArrayList<String> initialBoard = new ArrayList<>(Arrays.asList(
-        "bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR",
+            "bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR",
              "bP", "bP", "bP", "bP", "bP", "bP", "bP", "bP",
              "", "", "", "", "", "", "", "",
              "", "", "", "", "", "", "", "",

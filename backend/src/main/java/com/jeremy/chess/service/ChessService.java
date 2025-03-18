@@ -2,6 +2,7 @@ package com.jeremy.chess.service;
 
 import com.jeremy.chess.model.ChessMove;
 import com.jeremy.chess.model.Lobby;
+import com.jeremy.chess.util.MoveValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -73,6 +74,12 @@ public class ChessService {
                 return convertBoardStateToMap(boardState);
             }
 
+            // Validate the move
+            if (!MoveValidator.isValidMove(piece, chessMove.getFrom(), chessMove.getTo(), boardState)) {
+                logger.warn("Invalid move from {} to {} by player {} in lobby {}", chessMove.getFrom(), chessMove.getTo(), playerId, lobbyId);
+                return convertBoardStateToMap(boardState);
+            }
+
             // Handle promotion
             String newPiece = piece;
             if (chessMove.getPromotion() != null) {
@@ -113,7 +120,6 @@ public class ChessService {
         Lobby lobby = lobbies.get(lobbyId);
         if (lobby != null) {
             logger.info("Player {} joined lobby {}", playerId, lobbyId);
-            // Don't automatically assign colors - let players claim them
         }
     }
 
