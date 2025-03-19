@@ -14,12 +14,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+/**
+ * Service class that manages chess game lobbies and handles game logic.
+ * 
+ * @author Jeremy Kiley
+ * @author ChatGPT
+ */
 @Service
 public class ChessService {
     private static final Logger logger = LoggerFactory.getLogger(ChessService.class);
     private final Map<String, Lobby> lobbies = new HashMap<>();
     private final Map<String, String> playerColors = new HashMap<>();
 
+    /**
+     * Creates a new lobby with the specified name.
+     * 
+     * @param name The name of the lobby
+     * @return The created lobby
+     */
     public Lobby createLobby(String name) {
         logger.info("Creating lobby with name: {}", name);
         Lobby lobby = new Lobby(name);
@@ -28,10 +40,21 @@ public class ChessService {
         return lobby;
     }
 
+    /**
+     * Creates a new lobby with a default name.
+     * 
+     * @return The created lobby
+     */
     public Lobby createLobby() {
         return createLobby("Unnamed Lobby");
     }
 
+    /**
+     * Gets the current board state for a specific lobby.
+     * 
+     * @param lobbyId The ID of the lobby
+     * @return A map of square positions to piece strings, or null if the lobby doesn't exist
+     */
     public Map<String, String> getBoardState(String lobbyId) {
         Lobby lobby = lobbies.get(lobbyId);
         if (lobby != null) {
@@ -43,6 +66,14 @@ public class ChessService {
         }
     }
 
+    /**
+     * Makes a move in a specific lobby.
+     * 
+     * @param lobbyId The ID of the lobby
+     * @param chessMove The move to make
+     * @param playerId The ID of the player making the move
+     * @return The updated board state after the move
+     */
     public Map<String, String> makeMove(String lobbyId, ChessMove chessMove, String playerId) {
         try {
             Lobby lobby = lobbies.get(lobbyId);
@@ -186,6 +217,14 @@ public class ChessService {
         return lobby != null ? lobby.getBlackPlayerId() : null;
     }
 
+    /**
+     * Claims a color for a player in a specific lobby.
+     * 
+     * @param lobbyId The ID of the lobby
+     * @param playerId The ID of the player
+     * @param color The color to claim ("white" or "black")
+     * @return true if the color was successfully claimed, false otherwise
+     */
     public boolean claimColor(String lobbyId, String playerId, String color) {
         Lobby lobby = lobbies.get(lobbyId);
         if (lobby == null) {
@@ -220,11 +259,23 @@ public class ChessService {
         return false;
     }
 
+    /**
+     * Checks if it is currently the white player's turn in a specific lobby.
+     * 
+     * @param lobbyId The ID of the lobby
+     * @return true if it is white's turn, false otherwise
+     */
     public boolean isWhiteTurn(String lobbyId) {
         Lobby lobby = lobbies.get(lobbyId);
         return lobby != null && lobby.isWhiteTurn();
     }
 
+    /**
+     * Converts a board state ArrayList to a map of square positions to piece strings.
+     * 
+     * @param boardState The board state as an ArrayList
+     * @return A map of square positions to piece strings
+     */
     private Map<String, String> convertBoardStateToMap(ArrayList<String> boardState) {
         Map<String, String> boardMap = new HashMap<>();
         String[] squares = {
@@ -245,6 +296,12 @@ public class ChessService {
         return boardMap;
     }
 
+    /**
+     * Converts a chess square notation to a board index.
+     * 
+     * @param square The square in chess notation (e.g., "e4")
+     * @return The corresponding board index (0-63)
+     */
     private int convertSquareToIndex(String square) {
         int file = square.charAt(0) - 'a';
         int rank = 8 - Character.getNumericValue(square.charAt(1));

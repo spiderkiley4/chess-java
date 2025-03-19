@@ -84,14 +84,54 @@ public class ChessWebSocketController {
 
     @MessageMapping("/chat")
     @SendTo("/topic/game")
-    public GameMessage handleChat(GameMessage message) {
+    public GameMessage handleChat(GameMessage message, SimpMessageHeaderAccessor headerAccessor) {
         String lobbyId = message.getLobbyId();
+        String playerId = headerAccessor.getSessionId();
         Lobby lobby = chessService.getLobby(lobbyId);
         if (lobby == null) {
             throw new IllegalArgumentException("Lobby not found: " + lobbyId);
         }
 
-        // Forward the chat message to all players in the lobby
+        // Check if the message is a natural language chess move
+        String content = message.getContent().toString();
+        if (MoveParser.isNaturalLanguageCommand(content)) {
+            // Parse the move
+            ChessMove move = MoveParser.parseNaturalLanguage(content, lobby.isWhiteTurn(), lobby);
+            if (move != null) {
+                // Make the move
+                Map<String, String> newState = chessService.makeMove(lobbyId, move, playerId);
+                if (newState != null) {
+                    // Send lobby update after move
+                    sendLobbyUpdate();
+                    
+                    // Return game state with end state information if available
+                    GameMessage response = new GameMessage(
+                        lobbyId,
+                        "MOVE",
+                        newState,
+                        lobby.isWhiteTurn(),
+                        lobby.isGameOver(),
+                        lobby.getWinningTeam(),
+                        lobby.getGameEndReason()
+                    );
+                    
+                    // Set check status for the current player
+                    response.setInCheck(lobby.isInCheck(lobby.isWhiteTurn()));
+                    
+                    // Also send a chat message about the move
+                    GameMessage chatResponse = new GameMessage(
+                        lobbyId,
+                        "CHAT",
+                        createChatMessage(lobbyId, playerId, "Moved " + content),
+                        lobby.isWhiteTurn()
+                    );
+                    
+                    return chatResponse;
+                }
+            }
+        }
+
+        // If not a valid move, just forward the chat message
         return new GameMessage(
             lobbyId,
             "CHAT",

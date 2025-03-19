@@ -8,6 +8,12 @@ import org.slf4j.LoggerFactory;
 import com.jeremy.chess.util.ChessUtils;
 import com.jeremy.chess.util.MoveValidator;
 
+/**
+ * Represents a chess game lobby that manages the game state, players, and move validation.
+ * 
+ * @author Jeremy Kiley
+ * @author ChatGPT
+ */
 public class Lobby {
     private static final Logger logger = LoggerFactory.getLogger(Lobby.class);
 
@@ -33,6 +39,9 @@ public class Lobby {
     private ArrayList<String> previousPositions = new ArrayList<>();
     private String lastMovedPawnSquare = null;  // Track square of last moved pawn for en passant
 
+    /**
+     * Default constructor that creates a new lobby with a random UUID.
+     */
     public Lobby() {
         this.id = UUID.randomUUID().toString();
         this.name = "Unnamed Lobby";
@@ -41,27 +50,57 @@ public class Lobby {
         logger.info("Initial board state: {}", boardState);
     }
 
+    /**
+     * Constructor that creates a new lobby with a specified name.
+     * 
+     * @param name The name of the lobby
+     */
     public Lobby(String name) {
         this();
         this.name = name;
     }
 
+    /**
+     * Gets the lobby's unique identifier.
+     * 
+     * @return The lobby ID
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     * Gets the lobby's name.
+     * 
+     * @return The lobby name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets the lobby's name.
+     * 
+     * @param name The new name for the lobby
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Gets the current state of the chess board.
+     * 
+     * @return The board state as an ArrayList of piece strings
+     */
     public ArrayList<String> getBoardState() {
         return boardState;
     }
 
+    /**
+     * Sets the state of the chess board and checks for game over conditions.
+     * 
+     * @param boardState The new board state
+     */
     public void setBoardState(ArrayList<String> boardState) {
         this.boardState = boardState;
         logger.info("Board state updated: {}", boardState);
@@ -70,14 +109,27 @@ public class Lobby {
         this.lastMovedPawnSquare = null; // Reset en passant square after each move
     }
 
+    /**
+     * Gets the square of the last moved pawn (for en passant validation).
+     * 
+     * @return The square in chess notation, or null if no pawn was moved
+     */
     public String getLastMovedPawnSquare() {
         return lastMovedPawnSquare;
     }
 
+    /**
+     * Sets the square of the last moved pawn (for en passant validation).
+     * 
+     * @param square The square in chess notation
+     */
     public void setLastMovedPawnSquare(String square) {
         this.lastMovedPawnSquare = square;
     }
 
+    /**
+     * Checks for various game over conditions and updates the game state accordingly.
+     */
     private void checkGameOver() {
         // Check for king capture
         boolean whiteKingPresent = boardState.contains("wK");
@@ -137,10 +189,23 @@ public class Lobby {
         }
     }
 
+    /**
+     * Checks if the specified player is in check.
+     * 
+     * @param isWhite Whether to check the white player
+     * @return true if the player is in check, false otherwise
+     */
     public boolean isInCheck(boolean isWhite) {
         return isInCheck(isWhite, boardState);
     }
 
+    /**
+     * Checks if the specified player is in check on a given board state.
+     * 
+     * @param isWhite Whether to check the white player
+     * @param board The board state to check
+     * @return true if the player is in check, false otherwise
+     */
     public boolean isInCheck(boolean isWhite, ArrayList<String> board) {
         // Find king position
         int kingIndex = -1;
@@ -169,6 +234,12 @@ public class Lobby {
         return false;
     }
 
+    /**
+     * Checks if the specified player has any legal moves available.
+     * 
+     * @param isWhite Whether to check the white player
+     * @return true if the player has legal moves, false otherwise
+     */
     private boolean hasLegalMoves(boolean isWhite) {
         // Try all possible moves for all pieces
         for (int i = 0; i < boardState.size(); i++) {
@@ -201,6 +272,11 @@ public class Lobby {
         return false;
     }
 
+    /**
+     * Checks if the current position has insufficient material for checkmate.
+     * 
+     * @return true if there is insufficient material, false otherwise
+     */
     private boolean isInsufficientMaterial() {
         int whitePieces = 0;
         int blackPieces = 0;
@@ -258,6 +334,11 @@ public class Lobby {
         return false;
     }
 
+    /**
+     * Checks if the current position has occurred three times (threefold repetition).
+     * 
+     * @return true if there is threefold repetition, false otherwise
+     */
     private boolean isThreefoldRepetition() {
         String currentPosition = String.join(",", boardState);
         int count = 0;
@@ -270,30 +351,65 @@ public class Lobby {
         return false;
     }
 
+    /**
+     * Gets the reason why the game ended.
+     * 
+     * @return The game end reason, or null if the game is still in progress
+     */
     public String getGameEndReason() {
         return gameEndReason;
     }
 
+    /**
+     * Checks if the game is over.
+     * 
+     * @return true if the game is over, false otherwise
+     */
     public boolean isGameOver() {
         return winningTeam != null;
     }
 
+    /**
+     * Gets the winning team.
+     * 
+     * @return "White", "Black", "Draw", or null if the game is still in progress
+     */
     public String getWinningTeam() {
         return winningTeam;
     }
 
+    /**
+     * Gets the ID of the white player.
+     * 
+     * @return The white player's ID, or null if no white player has joined
+     */
     public String getWhitePlayerId() {
         return whitePlayerId;
     }
 
+    /**
+     * Gets the ID of the black player.
+     * 
+     * @return The black player's ID, or null if no black player has joined
+     */
     public String getBlackPlayerId() {
         return blackPlayerId;
     }
 
+    /**
+     * Checks if it is currently the white player's turn.
+     * 
+     * @return true if it is white's turn, false otherwise
+     */
     public boolean isWhiteTurn() {
         return isWhiteTurn;
     }
 
+    /**
+     * Adds a player to the lobby.
+     * 
+     * @param playerId The ID of the player to add
+     */
     public void addPlayer(String playerId) {
         if (whitePlayerId == null) {
             whitePlayerId = playerId;
@@ -304,21 +420,42 @@ public class Lobby {
         }
     }
 
+    /**
+     * Checks if a player can make a move in the current turn.
+     * 
+     * @param playerId The ID of the player to check
+     * @return true if the player can move, false otherwise
+     */
     public boolean canPlayerMove(String playerId) {
         if (playerId == null) return false;
         return (isWhiteTurn && playerId.equals(whitePlayerId)) ||
                (!isWhiteTurn && playerId.equals(blackPlayerId));
     }
 
+    /**
+     * Checks if the lobby is full (has both players).
+     * 
+     * @return true if the lobby is full, false otherwise
+     */
     public boolean isFull() {
         return whitePlayerId != null && blackPlayerId != null;
     }
 
+    /**
+     * Sets the white player's ID.
+     * 
+     * @param playerId The ID of the white player
+     */
     public void setWhitePlayerId(String playerId) {
         this.whitePlayerId = playerId;
         logger.info("White player set to: {}", playerId);
     }
 
+    /**
+     * Sets the black player's ID.
+     * 
+     * @param playerId The ID of the black player
+     */
     public void setBlackPlayerId(String playerId) {
         this.blackPlayerId = playerId;
         logger.info("Black player set to: {}", playerId);

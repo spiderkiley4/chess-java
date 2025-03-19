@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import WebSocketService from '../services/WebSocketService';
 
-const ChatBox = ({ lobbyId }) => {
+const ChatBox = ({ lobbyId, playerColor, isWhiteTurn }) => {
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
     const [playerName, setPlayerName] = useState('Player ' + Math.floor(Math.random() * 1000));
@@ -31,8 +31,14 @@ const ChatBox = ({ lobbyId }) => {
         e.preventDefault();
         if (!inputMessage.trim()) return;
 
+        // Check if it's the player's turn
+        if (playerColor && ((playerColor === 'white' && !isWhiteTurn) || (playerColor === 'black' && isWhiteTurn))) {
+            alert("It's not your turn!");
+            return;
+        }
+
         const chatMessage = {
-            playerName: playerName,
+            playerName: `${playerName} (${playerColor})`,
             content: inputMessage,
         };
 
@@ -55,10 +61,23 @@ const ChatBox = ({ lobbyId }) => {
                     type="text"
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}
-                    placeholder="Type a message or chess move..."
+                    placeholder={playerColor ? 
+                        `Type a message or chess move (e.g., "Knight to f3")...` : 
+                        "Join a color to chat and make moves..."}
                     style={styles.input}
+                    disabled={!playerColor}
                 />
-                <button type="submit" style={styles.button}>Send</button>
+                <button 
+                    type="submit" 
+                    style={{
+                        ...styles.button,
+                        opacity: playerColor ? 1 : 0.5,
+                        cursor: playerColor ? 'pointer' : 'not-allowed'
+                    }}
+                    disabled={!playerColor}
+                >
+                    Send
+                </button>
             </form>
         </div>
     );
@@ -78,7 +97,7 @@ const styles = {
         flex: 1,
         overflowY: 'auto',
         padding: '10px',
-        backgroundColor: '#f8f9fa',
+        backgroundColor: 'black',
     },
     message: {
         marginBottom: '8px',
