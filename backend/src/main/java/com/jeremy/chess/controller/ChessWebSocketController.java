@@ -171,6 +171,48 @@ public class ChessWebSocketController {
         return chessService.getLobbies();
     }
 
+    @MessageMapping("/disconnect")
+    @SendTo("/topic/game")
+    public GameMessage handleDisconnect(GameMessage message, SimpMessageHeaderAccessor headerAccessor) {
+        String playerId = headerAccessor.getSessionId();
+        String lobbyId = message.getLobbyId();
+        Lobby lobby = chessService.getLobby(lobbyId);
+        
+        if (lobby != null) {
+            String playerColor = null;
+            if (playerId.equals(lobby.getWhitePlayerId())) {
+                playerColor = "white";
+                chessService.claimColor(lobbyId, null, "white"); // Release white color
+            } else if (playerId.equals(lobby.getBlackPlayerId())) {
+                playerColor = "black";
+                chessService.claimColor(lobbyId, null, "black"); // Release black color
+            }
+
+            if (playerColor != null) {
+                // Send a chat message about the disconnection
+                GameMessage chatMessage = createChatMessage(
+                    lobbyId,
+                    "System",
+                    playerColor + " player has disconnected"
+                );
+                
+                // Send updated player information
+                Map<String, String> players = Map.of(
+                    "whitePlayerId", chessService.getWhitePlayerId(lobbyId) != null ? 
+                        chessService.getWhitePlayerId(lobbyId) : "",
+                    "blackPlayerId", chessService.getBlackPlayerId(lobbyId) != null ? 
+                        chessService.getBlackPlayerId(lobbyId) : ""
+                );
+                
+                // Send lobby update after disconnect
+                sendLobbyUpdate();
+                
+                return new GameMessage(lobbyId, "PLAYERS", players, chessService.isWhiteTurn(lobbyId));
+            }
+        }
+        return null;
+    }
+
     private ChessMove convertToChessMove(Object content) {
         try {
             if (content instanceof Map) {
