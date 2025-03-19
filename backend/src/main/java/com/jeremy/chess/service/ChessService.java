@@ -3,6 +3,7 @@ package com.jeremy.chess.service;
 import com.jeremy.chess.model.ChessMove;
 import com.jeremy.chess.model.Lobby;
 import com.jeremy.chess.util.MoveValidator;
+import com.jeremy.chess.util.ChessUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -74,9 +75,27 @@ public class ChessService {
                 return convertBoardStateToMap(boardState);
             }
 
+            // Prevent capturing own pieces
+            String targetPiece = boardState.get(convertSquareToIndex(chessMove.getTo()));
+            if (!targetPiece.isEmpty() && targetPiece.charAt(0) == piece.charAt(0)) {
+                logger.warn("Player {} attempted to capture their own piece in lobby {}", playerId, lobbyId);
+                return convertBoardStateToMap(boardState);
+            }
+
             // Validate the move
             if (!MoveValidator.isValidMove(piece, chessMove.getFrom(), chessMove.getTo(), boardState)) {
                 logger.warn("Invalid move from {} to {} by player {} in lobby {}", chessMove.getFrom(), chessMove.getTo(), playerId, lobbyId);
+                return convertBoardStateToMap(boardState);
+            }
+
+            // Check if the move gets the player out of check
+            ArrayList<String> tempBoard = new ArrayList<>(boardState);
+            tempBoard.set(convertSquareToIndex(chessMove.getFrom()), "");
+            tempBoard.set(convertSquareToIndex(chessMove.getTo()), piece);
+            
+            if (lobby.isInCheck(isWhiteTurn) && lobby.isInCheck(isWhiteTurn, tempBoard)) {
+                logger.warn("Move from {} to {} by player {} in lobby {} does not get out of check", 
+                    chessMove.getFrom(), chessMove.getTo(), playerId, lobbyId);
                 return convertBoardStateToMap(boardState);
             }
 
@@ -94,6 +113,29 @@ public class ChessService {
             // Make the move
             boardState.set(convertSquareToIndex(chessMove.getFrom()), "");
             boardState.set(convertSquareToIndex(chessMove.getTo()), newPiece);
+
+            // Handle en passant capture
+            if (piece.endsWith("P")) {
+                int fromIndex = convertSquareToIndex(chessMove.getFrom());
+                int toIndex = convertSquareToIndex(chessMove.getTo());
+                int direction = isWhitePiece ? -1 : 1;
+                
+                // Check if this was a double pawn move
+                if (Math.abs(toIndex - fromIndex) == 16) {
+                    lobby.setLastMovedPawnSquare(chessMove.getTo());
+                }
+                
+                // Check if this was an en passant capture
+                if (Math.abs(toIndex - fromIndex) == 7 || Math.abs(toIndex - fromIndex) == 9) {
+                    int capturedPawnIndex = toIndex - 8 * direction; // The square the captured pawn is on
+                    String capturedPiece = boardState.get(capturedPawnIndex);
+                    if (capturedPiece.equals(isWhitePiece ? "bP" : "wP")) {
+                        boardState.set(capturedPawnIndex, "");
+                        logger.info("En passant capture in lobby {}: {} captures pawn at {}", 
+                            lobbyId, piece, ChessUtils.indexToNotation(capturedPawnIndex));
+                    }
+                }
+            }
             
             // Update board state and toggle turn
             lobby.setBoardState(boardState);

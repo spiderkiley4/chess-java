@@ -1638,3 +1638,892 @@ java.lang.IllegalArgumentException: Failed to convert move: Unrecognized field "
 2025-03-15 19:29:16,221 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-17] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 4 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(2)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 69], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 20], sockJsScheduler[pool size = 24, active threads = 1, queued tasks = 1, completed tasks = 1349]
 2025-03-15 19:59:16,221 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-19] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 4 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(2)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 69], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 20], sockJsScheduler[pool size = 24, active threads = 1, queued tasks = 1, completed tasks = 1710]
 2025-03-15 20:42:06,096 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-6] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 6 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(4)-CONNECTED(4)-DISCONNECT(2)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 81], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 22], sockJsScheduler[pool size = 24, active threads = 1, queued tasks = 3, completed tasks = 2157]
+2025-03-17 08:53:29,618 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 15092 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-17 08:53:29,619 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-17 08:53:29,620 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-17 08:53:30,190 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-17 08:53:30,197 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-17 08:53:30,200 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-17 08:53:30,201 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-17 08:53:30,239 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-17 08:53:30,240 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 581 ms
+2025-03-17 08:53:30,608 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-17 08:53:30,626 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-17 08:53:30,628 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-17 08:53:30,631 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@57ad1178]]
+2025-03-17 08:53:30,632 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-17 08:53:30,640 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 1.291 seconds (process running for 1.719)
+2025-03-17 08:54:01,287 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-17 08:54:01,288 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-03-17 08:54:01,289 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2025-03-17 08:54:02,830 INFO c.j.c.s.ChessService [http-nio-8080-exec-3] Creating lobby with name: Unnamed Lobby
+2025-03-17 08:54:02,831 INFO c.j.c.m.Lobby [http-nio-8080-exec-3] Lobby created with ID: 387d4582-7d3b-4793-9e31-4d90744381e2
+2025-03-17 08:54:02,832 INFO c.j.c.m.Lobby [http-nio-8080-exec-3] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:54:02,832 INFO c.j.c.s.ChessService [http-nio-8080-exec-3] Created lobby: id=387d4582-7d3b-4793-9e31-4d90744381e2, name=Unnamed Lobby
+2025-03-17 08:54:02,885 INFO c.j.c.s.ChessService [http-nio-8080-exec-4] Returning board state for lobby 387d4582-7d3b-4793-9e31-4d90744381e2: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:54:02,899 INFO c.j.c.s.ChessService [http-nio-8080-exec-5] Returning board state for lobby 387d4582-7d3b-4793-9e31-4d90744381e2: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:54:30,619 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-2] WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 6, active threads = 0, queued tasks = 0, completed tasks = 6], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 5, active threads = 1, queued tasks = 2, completed tasks = 1]
+2025-03-17 08:54:42,775 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Creating lobby with name: lobby 1
+2025-03-17 08:54:42,776 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Lobby created with ID: a26b7c81-945c-4823-b03e-b004c580afc5
+2025-03-17 08:54:42,776 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:54:42,776 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Created lobby: id=a26b7c81-945c-4823-b03e-b004c580afc5, name=lobby 1
+2025-03-17 08:54:42,814 INFO c.j.c.s.ChessService [clientInboundChannel-19] Player l5kcd25j joined lobby a26b7c81-945c-4823-b03e-b004c580afc5
+2025-03-17 08:54:42,815 INFO c.j.c.s.ChessService [clientInboundChannel-19] Returning board state for lobby a26b7c81-945c-4823-b03e-b004c580afc5: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:54:53,231 INFO c.j.c.s.ChessService [clientInboundChannel-31] Player xvylbelp joined lobby a26b7c81-945c-4823-b03e-b004c580afc5
+2025-03-17 08:54:53,232 INFO c.j.c.s.ChessService [clientInboundChannel-31] Returning board state for lobby a26b7c81-945c-4823-b03e-b004c580afc5: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:54:54,898 INFO c.j.c.m.Lobby [clientInboundChannel-3] Black player set to: xvylbelp
+2025-03-17 08:54:54,899 INFO c.j.c.s.ChessService [clientInboundChannel-3] Player xvylbelp claimed black in lobby a26b7c81-945c-4823-b03e-b004c580afc5
+2025-03-17 08:54:56,799 INFO c.j.c.m.Lobby [clientInboundChannel-6] White player set to: l5kcd25j
+2025-03-17 08:54:56,800 INFO c.j.c.s.ChessService [clientInboundChannel-6] Player l5kcd25j claimed white in lobby a26b7c81-945c-4823-b03e-b004c580afc5
+2025-03-17 08:54:58,496 INFO c.j.c.m.Lobby [clientInboundChannel-9] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:54:58,501 INFO c.j.c.s.ChessService [clientInboundChannel-9] Move made in lobby a26b7c81-945c-4823-b03e-b004c580afc5: g2 to g3, next turn: black
+2025-03-17 08:55:01,244 INFO c.j.c.m.Lobby [clientInboundChannel-11] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:55:01,245 INFO c.j.c.s.ChessService [clientInboundChannel-11] Move made in lobby a26b7c81-945c-4823-b03e-b004c580afc5: b7 to b6, next turn: white
+2025-03-17 08:55:33,572 INFO c.j.c.m.Lobby [clientInboundChannel-19] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, , wP, wP, wP, wP, wP, , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:55:33,572 INFO c.j.c.s.ChessService [clientInboundChannel-19] Move made in lobby a26b7c81-945c-4823-b03e-b004c580afc5: f2 to f3, next turn: black
+2025-03-17 08:55:36,282 INFO c.j.c.m.Lobby [clientInboundChannel-21] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , , bP, bP, bP, bP, bP, , bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, , wP, wP, wP, wP, wP, , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:55:36,282 INFO c.j.c.s.ChessService [clientInboundChannel-21] Move made in lobby a26b7c81-945c-4823-b03e-b004c580afc5: c7 to c6, next turn: white
+2025-03-17 08:55:42,203 INFO c.j.c.m.Lobby [clientInboundChannel-8] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , , bP, bP, bP, bP, bP, , bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, , wP, wP, wP, wP, , , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 08:55:42,204 INFO c.j.c.s.ChessService [clientInboundChannel-8] Move made in lobby a26b7c81-945c-4823-b03e-b004c580afc5: e2 to e3, next turn: black
+2025-03-17 08:55:44,966 INFO c.j.c.s.ChessService [clientInboundChannel-16] Player srkoklxo joined lobby a26b7c81-945c-4823-b03e-b004c580afc5
+2025-03-17 08:55:44,966 INFO c.j.c.s.ChessService [clientInboundChannel-16] Returning board state for lobby a26b7c81-945c-4823-b03e-b004c580afc5: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , , bP, bP, bP, bP, bP, , bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, , wP, wP, wP, wP, , , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:09:57,745 INFO c.j.c.s.ChessService [http-nio-8080-exec-5] Creating lobby with name: lobby 5
+2025-03-17 09:09:57,746 INFO c.j.c.m.Lobby [http-nio-8080-exec-5] Lobby created with ID: 5e63e454-2c21-48c8-b61c-51e940ec4390
+2025-03-17 09:09:57,746 INFO c.j.c.m.Lobby [http-nio-8080-exec-5] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:09:57,746 INFO c.j.c.s.ChessService [http-nio-8080-exec-5] Created lobby: id=5e63e454-2c21-48c8-b61c-51e940ec4390, name=lobby 5
+2025-03-17 09:09:57,761 INFO c.j.c.s.ChessService [clientInboundChannel-54] Player u5gbfi3e joined lobby 5e63e454-2c21-48c8-b61c-51e940ec4390
+2025-03-17 09:09:57,762 INFO c.j.c.s.ChessService [clientInboundChannel-54] Returning board state for lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:10:00,791 INFO c.j.c.s.ChessService [clientInboundChannel-47] Player cx0xtuea joined lobby 5e63e454-2c21-48c8-b61c-51e940ec4390
+2025-03-17 09:10:00,791 INFO c.j.c.s.ChessService [clientInboundChannel-47] Returning board state for lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:10:02,972 INFO c.j.c.m.Lobby [clientInboundChannel-49] White player set to: u5gbfi3e
+2025-03-17 09:10:02,972 INFO c.j.c.s.ChessService [clientInboundChannel-49] Player u5gbfi3e claimed white in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390
+2025-03-17 09:10:05,464 INFO c.j.c.m.Lobby [clientInboundChannel-52] Black player set to: cx0xtuea
+2025-03-17 09:10:05,464 INFO c.j.c.s.ChessService [clientInboundChannel-52] Player cx0xtuea claimed black in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390
+2025-03-17 09:10:08,802 INFO c.j.c.m.Lobby [clientInboundChannel-56] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:10:08,802 INFO c.j.c.s.ChessService [clientInboundChannel-56] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: f2 to f3, next turn: black
+2025-03-17 09:10:12,604 INFO c.j.c.m.Lobby [clientInboundChannel-58] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:10:12,605 INFO c.j.c.s.ChessService [clientInboundChannel-58] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: b7 to b6, next turn: white
+2025-03-17 09:25:36,625 INFO c.j.c.m.Lobby [clientInboundChannel-65] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, , , wP, wP, wP, wP, , , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:25:36,626 INFO c.j.c.s.ChessService [clientInboundChannel-65] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: e2 to e3, next turn: black
+2025-03-17 09:25:39,357 INFO c.j.c.m.Lobby [clientInboundChannel-68] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, , , bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, , , wP, wP, wP, wP, , , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:25:39,358 INFO c.j.c.s.ChessService [clientInboundChannel-68] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: a7 to a6, next turn: white
+2025-03-17 09:25:42,629 INFO c.j.c.m.Lobby [clientInboundChannel-71] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, , , bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, , , wP, wP, wP, , , , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:25:42,629 INFO c.j.c.s.ChessService [clientInboundChannel-71] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: d2 to d3, next turn: black
+2025-03-17 09:25:45,369 INFO c.j.c.m.Lobby [clientInboundChannel-74] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, , , bP, , bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, , , wP, wP, wP, , , , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:25:45,369 INFO c.j.c.s.ChessService [clientInboundChannel-74] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: d7 to c6, next turn: white
+2025-03-17 09:25:52,290 INFO c.j.c.m.Lobby [clientInboundChannel-77] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, , , bP, , bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, , wP, wP, wP, , , , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:25:52,291 INFO c.j.c.s.ChessService [clientInboundChannel-77] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: g2 to g3, next turn: black
+2025-03-17 09:26:00,407 INFO c.j.c.m.Lobby [clientInboundChannel-80] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, , , bP, , , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, , wP, wP, wP, , , , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:26:00,408 INFO c.j.c.s.ChessService [clientInboundChannel-80] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: e7 to e6, next turn: white
+2025-03-17 09:26:02,578 INFO c.j.c.m.Lobby [clientInboundChannel-83] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, , , bP, , , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, , wP, wP, , , , , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:26:02,579 INFO c.j.c.s.ChessService [clientInboundChannel-83] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: c2 to c3, next turn: black
+2025-03-17 09:26:13,230 INFO c.j.c.m.Lobby [clientInboundChannel-86] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, , , bP, , , bP, bP, bP, bP, bP, , , bP, , , , , , bP, , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, , wP, wP, , , , , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:26:13,231 INFO c.j.c.s.ChessService [clientInboundChannel-86] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: c6 to c5, next turn: white
+2025-03-17 09:26:19,797 INFO c.j.c.m.Lobby [clientInboundChannel-89] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, , , bP, , , bP, bP, bP, bP, bP, , , bP, , , , , , bP, , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, , , , , , , wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:26:19,798 INFO c.j.c.s.ChessService [clientInboundChannel-89] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: h2 to h3, next turn: black
+2025-03-17 09:26:22,786 INFO c.j.c.m.Lobby [clientInboundChannel-92] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, , , bP, , , bP, bP, , bP, bP, , , bP, , , bP, , , bP, , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, , , , , , , wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:26:22,787 INFO c.j.c.s.ChessService [clientInboundChannel-92] Move made in lobby 5e63e454-2c21-48c8-b61c-51e940ec4390: h7 to h6, next turn: white
+2025-03-17 09:27:11,372 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-6] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 6 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(6)-CONNECTED(6)-DISCONNECT(3)], stompBrokerRelay[null], inboundChannel[pool size = 9, active threads = 0, queued tasks = 0, completed tasks = 267], outboundChannel[pool size = 6, active threads = 0, queued tasks = 0, completed tasks = 129], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 490]
+2025-03-17 09:56:08,215 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 89714 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-17 09:56:08,229 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-17 09:56:08,230 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-17 09:56:09,593 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-17 09:56:09,611 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-17 09:56:09,616 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-17 09:56:09,617 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-17 09:56:09,714 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-17 09:56:09,717 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1391 ms
+2025-03-17 09:56:10,271 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-17 09:56:10,316 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-17 09:56:10,320 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-17 09:56:10,324 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@adcfad9]]
+2025-03-17 09:56:10,326 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-17 09:56:10,347 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 2.734 seconds (process running for 3.363)
+2025-03-17 09:56:15,191 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-17 09:56:15,192 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-03-17 09:56:15,193 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2025-03-17 09:56:15,237 INFO c.j.c.s.ChessService [http-nio-8080-exec-1] Creating lobby with name: lobby 1
+2025-03-17 09:56:15,249 INFO c.j.c.m.Lobby [http-nio-8080-exec-1] Lobby created with ID: f015b573-92d5-4312-acf8-b49003685281
+2025-03-17 09:56:15,250 INFO c.j.c.m.Lobby [http-nio-8080-exec-1] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:56:15,250 INFO c.j.c.s.ChessService [http-nio-8080-exec-1] Created lobby: id=f015b573-92d5-4312-acf8-b49003685281, name=lobby 1
+2025-03-17 09:56:38,610 INFO c.j.c.s.ChessService [http-nio-8080-exec-7] Creating lobby with name: lobby
+2025-03-17 09:56:38,611 INFO c.j.c.m.Lobby [http-nio-8080-exec-7] Lobby created with ID: 610ff7c3-5102-4077-9581-445395206dde
+2025-03-17 09:56:38,611 INFO c.j.c.m.Lobby [http-nio-8080-exec-7] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:56:38,611 INFO c.j.c.s.ChessService [http-nio-8080-exec-7] Created lobby: id=610ff7c3-5102-4077-9581-445395206dde, name=lobby
+2025-03-17 09:56:38,763 INFO c.j.c.s.ChessService [clientInboundChannel-10] Player eusrodot joined lobby 610ff7c3-5102-4077-9581-445395206dde
+2025-03-17 09:56:38,764 INFO c.j.c.s.ChessService [clientInboundChannel-10] Returning board state for lobby 610ff7c3-5102-4077-9581-445395206dde: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-17 09:57:10,264 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-5] WebSocketSession[1 current WS(0)-HttpStream(1)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(1)], stompBrokerRelay[null], inboundChannel[pool size = 27, active threads = 0, queued tasks = 0, completed tasks = 27], outboundChannel[pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 5], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 2, completed tasks = 9]
+2025-03-18 09:12:45,624 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 63445 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-18 09:12:45,638 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-18 09:12:45,639 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-18 09:12:46,544 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-18 09:12:46,551 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-18 09:12:46,553 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-18 09:12:46,554 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-18 09:12:46,610 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-18 09:12:46,612 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 913 ms
+2025-03-18 09:12:47,011 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-18 09:12:47,039 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-18 09:12:47,043 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-18 09:12:47,046 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@adcfad9]]
+2025-03-18 09:12:47,047 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-18 09:12:47,057 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 1.851 seconds (process running for 2.336)
+2025-03-18 09:13:45,982 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 09:13:45,982 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-03-18 09:13:45,983 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2025-03-18 09:13:47,013 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-1] WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 6, active threads = 0, queued tasks = 0, completed tasks = 6], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 5, active threads = 1, queued tasks = 2, completed tasks = 1]
+2025-03-18 09:13:51,850 INFO c.j.c.s.ChessService [http-nio-8080-exec-5] Creating lobby with name: game 1
+2025-03-18 09:13:51,851 INFO c.j.c.m.Lobby [http-nio-8080-exec-5] Lobby created with ID: 988dfaa1-b440-4074-b5b6-3370ceea70d7
+2025-03-18 09:13:51,852 INFO c.j.c.m.Lobby [http-nio-8080-exec-5] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:13:51,852 INFO c.j.c.s.ChessService [http-nio-8080-exec-5] Created lobby: id=988dfaa1-b440-4074-b5b6-3370ceea70d7, name=game 1
+2025-03-18 09:13:51,914 INFO c.j.c.s.ChessService [clientInboundChannel-10] Player amjpbvlh joined lobby 988dfaa1-b440-4074-b5b6-3370ceea70d7
+2025-03-18 09:13:51,915 INFO c.j.c.s.ChessService [clientInboundChannel-10] Returning board state for lobby 988dfaa1-b440-4074-b5b6-3370ceea70d7: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:13:53,048 INFO c.j.c.m.Lobby [clientInboundChannel-13] White player set to: amjpbvlh
+2025-03-18 09:13:53,048 INFO c.j.c.s.ChessService [clientInboundChannel-13] Player amjpbvlh claimed white in lobby 988dfaa1-b440-4074-b5b6-3370ceea70d7
+2025-03-18 09:16:45,093 INFO o.s.w.s.m.SubProtocolWebSocketHandler [http-nio-8080-exec-8] No messages received after 103642 ms. Closing WebSocketServerSockJsSession[id=tkx1ia3p].
+2025-03-18 09:18:46,791 INFO c.j.c.s.ChessService [clientInboundChannel-101] Player 5rb5ia3n joined lobby 988dfaa1-b440-4074-b5b6-3370ceea70d7
+2025-03-18 09:18:46,791 INFO c.j.c.s.ChessService [clientInboundChannel-101] Returning board state for lobby 988dfaa1-b440-4074-b5b6-3370ceea70d7: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:18:47,573 INFO c.j.c.m.Lobby [clientInboundChannel-104] Black player set to: 5rb5ia3n
+2025-03-18 09:18:47,573 INFO c.j.c.s.ChessService [clientInboundChannel-104] Player 5rb5ia3n claimed black in lobby 988dfaa1-b440-4074-b5b6-3370ceea70d7
+2025-03-18 09:18:50,095 INFO c.j.c.s.ChessService [clientInboundChannel-110] Player h4vpta21 joined lobby 988dfaa1-b440-4074-b5b6-3370ceea70d7
+2025-03-18 09:18:50,095 INFO c.j.c.s.ChessService [clientInboundChannel-110] Returning board state for lobby 988dfaa1-b440-4074-b5b6-3370ceea70d7: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:18:57,029 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Creating lobby with name: game 2
+2025-03-18 09:18:57,030 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Lobby created with ID: 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b
+2025-03-18 09:18:57,030 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:18:57,030 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Created lobby: id=1c68023b-5147-4a81-9f1f-3d7cd3a69b4b, name=game 2
+2025-03-18 09:18:57,040 INFO c.j.c.s.ChessService [clientInboundChannel-121] Player evwy30k3 joined lobby 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b
+2025-03-18 09:18:57,041 INFO c.j.c.s.ChessService [clientInboundChannel-121] Returning board state for lobby 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:19:00,130 INFO c.j.c.s.ChessService [clientInboundChannel-93] Player tz2to2ef joined lobby 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b
+2025-03-18 09:19:00,130 INFO c.j.c.s.ChessService [clientInboundChannel-93] Returning board state for lobby 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:19:01,703 INFO c.j.c.m.Lobby [clientInboundChannel-98] Black player set to: tz2to2ef
+2025-03-18 09:19:01,704 INFO c.j.c.s.ChessService [clientInboundChannel-98] Player tz2to2ef claimed black in lobby 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b
+2025-03-18 09:19:03,206 INFO c.j.c.m.Lobby [clientInboundChannel-119] White player set to: evwy30k3
+2025-03-18 09:19:03,206 INFO c.j.c.s.ChessService [clientInboundChannel-119] Player evwy30k3 claimed white in lobby 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b
+2025-03-18 09:19:04,636 INFO c.j.c.m.Lobby [clientInboundChannel-99] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:19:04,637 INFO c.j.c.s.ChessService [clientInboundChannel-99] Move made in lobby 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b: g2 to g3, next turn: black
+2025-03-18 09:19:10,768 INFO c.j.c.m.Lobby [clientInboundChannel-103] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:19:10,768 INFO c.j.c.s.ChessService [clientInboundChannel-103] Move made in lobby 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b: b7 to b6, next turn: white
+2025-03-18 09:19:15,811 INFO c.j.c.m.Lobby [clientInboundChannel-106] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, , wP, wP, wP, wP, wP, , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:19:15,811 INFO c.j.c.s.ChessService [clientInboundChannel-106] Move made in lobby 1c68023b-5147-4a81-9f1f-3d7cd3a69b4b: f2 to f3, next turn: black
+2025-03-18 09:27:03,785 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 83439 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-18 09:27:03,788 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-18 09:27:03,790 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-18 09:27:04,740 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-18 09:27:04,750 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-18 09:27:04,753 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-18 09:27:04,754 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-18 09:27:04,804 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-18 09:27:04,805 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 938 ms
+2025-03-18 09:27:05,195 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-18 09:27:05,212 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-18 09:27:05,215 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-18 09:27:05,218 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@5b5dce5c]]
+2025-03-18 09:27:05,219 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-18 09:27:05,227 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 1.98 seconds (process running for 2.434)
+2025-03-18 09:27:07,449 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 09:27:07,449 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-03-18 09:27:07,451 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 2 ms
+2025-03-18 09:27:10,486 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Creating lobby with name: lobby 1
+2025-03-18 09:27:10,488 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Lobby created with ID: 1e42cc36-258b-449f-8463-dc8584565ff5
+2025-03-18 09:27:10,488 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:27:10,489 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Created lobby: id=1e42cc36-258b-449f-8463-dc8584565ff5, name=lobby 1
+2025-03-18 09:27:10,566 INFO c.j.c.s.ChessService [clientInboundChannel-10] Player mznebw3e joined lobby 1e42cc36-258b-449f-8463-dc8584565ff5
+2025-03-18 09:27:10,566 INFO c.j.c.s.ChessService [clientInboundChannel-10] Returning board state for lobby 1e42cc36-258b-449f-8463-dc8584565ff5: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:27:12,241 INFO c.j.c.m.Lobby [clientInboundChannel-13] White player set to: mznebw3e
+2025-03-18 09:27:12,241 INFO c.j.c.s.ChessService [clientInboundChannel-13] Player mznebw3e claimed white in lobby 1e42cc36-258b-449f-8463-dc8584565ff5
+2025-03-18 09:27:15,596 INFO c.j.c.s.ChessService [clientInboundChannel-25] Player hmmj5vvg joined lobby 1e42cc36-258b-449f-8463-dc8584565ff5
+2025-03-18 09:27:15,597 INFO c.j.c.s.ChessService [clientInboundChannel-25] Returning board state for lobby 1e42cc36-258b-449f-8463-dc8584565ff5: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:27:18,475 INFO c.j.c.m.Lobby [clientInboundChannel-28] Black player set to: hmmj5vvg
+2025-03-18 09:27:18,475 INFO c.j.c.s.ChessService [clientInboundChannel-28] Player hmmj5vvg claimed black in lobby 1e42cc36-258b-449f-8463-dc8584565ff5
+2025-03-18 09:27:22,392 INFO c.j.c.m.Lobby [clientInboundChannel-31] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:27:22,392 INFO c.j.c.s.ChessService [clientInboundChannel-31] Move made in lobby 1e42cc36-258b-449f-8463-dc8584565ff5: g2 to g3, next turn: black
+2025-03-18 09:28:05,197 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-5] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 32, active threads = 0, queued tasks = 0, completed tasks = 33], outboundChannel[pool size = 10, active threads = 0, queued tasks = 0, completed tasks = 10], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 14]
+2025-03-18 09:35:05,327 INFO c.j.c.m.Lobby [clientInboundChannel-33] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , bP, bP, bP, bP, bP, , , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:35:05,327 INFO c.j.c.s.ChessService [clientInboundChannel-33] Move made in lobby 1e42cc36-258b-449f-8463-dc8584565ff5: c7 to c6, next turn: white
+2025-03-18 09:35:09,014 INFO c.j.c.m.Lobby [clientInboundChannel-36] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , bP, bP, bP, bP, bP, , , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, wN, wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 09:35:09,015 INFO c.j.c.s.ChessService [clientInboundChannel-36] Move made in lobby 1e42cc36-258b-449f-8463-dc8584565ff5: g1 to g2, next turn: black
+2025-03-18 09:43:54,996 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 104189 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-18 09:43:55,000 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-18 09:43:55,001 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-18 09:43:56,147 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-18 09:43:56,157 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-18 09:43:56,160 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-18 09:43:56,161 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-18 09:43:56,234 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-18 09:43:56,248 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1144 ms
+2025-03-18 09:43:56,763 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-18 09:43:56,791 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-18 09:43:56,795 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-18 09:43:56,799 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@273a5a8a]]
+2025-03-18 09:43:56,800 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-18 09:43:56,814 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 2.5 seconds (process running for 3.467)
+2025-03-18 09:44:07,841 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 09:44:07,842 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-03-18 09:44:07,843 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2025-03-18 09:44:11,105 INFO c.j.c.s.ChessService [http-nio-8080-exec-5] Creating lobby with name: lobby
+2025-03-18 09:44:11,107 INFO c.j.c.m.Lobby [http-nio-8080-exec-5] Lobby created with ID: 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:11,107 INFO c.j.c.m.Lobby [http-nio-8080-exec-5] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:44:11,108 INFO c.j.c.s.ChessService [http-nio-8080-exec-5] Created lobby: id=174fae14-07a3-4331-9577-0ca58de5854c, name=lobby
+2025-03-18 09:44:11,245 INFO c.j.c.s.ChessService [clientInboundChannel-10] Player zuwxjxfk joined lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:11,246 INFO c.j.c.s.ChessService [clientInboundChannel-10] Returning board state for lobby 174fae14-07a3-4331-9577-0ca58de5854c: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:44:12,549 INFO c.j.c.m.Lobby [clientInboundChannel-13] White player set to: zuwxjxfk
+2025-03-18 09:44:12,550 INFO c.j.c.s.ChessService [clientInboundChannel-13] Player zuwxjxfk claimed white in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:16,913 INFO c.j.c.s.ChessService [clientInboundChannel-25] Player 2pry32eb joined lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:16,914 INFO c.j.c.s.ChessService [clientInboundChannel-25] Returning board state for lobby 174fae14-07a3-4331-9577-0ca58de5854c: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:44:18,137 INFO c.j.c.m.Lobby [clientInboundChannel-28] Black player set to: 2pry32eb
+2025-03-18 09:44:18,137 INFO c.j.c.s.ChessService [clientInboundChannel-28] Player 2pry32eb claimed black in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:22,173 WARN c.j.c.s.ChessService [clientInboundChannel-31] Invalid move from g2 to f3 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:24,021 WARN c.j.c.s.ChessService [clientInboundChannel-3] Invalid move from g2 to f3 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:25,347 WARN c.j.c.s.ChessService [clientInboundChannel-6] Invalid move from g2 to f3 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:26,727 WARN c.j.c.s.ChessService [clientInboundChannel-8] Invalid move from g2 to f3 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:28,011 WARN c.j.c.s.ChessService [clientInboundChannel-12] Invalid move from g2 to g4 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:29,298 WARN c.j.c.s.ChessService [clientInboundChannel-15] Invalid move from g2 to g3 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:30,522 WARN c.j.c.s.ChessService [clientInboundChannel-18] Invalid move from g2 to g3 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:31,735 WARN c.j.c.s.ChessService [clientInboundChannel-20] Invalid move from g2 to g3 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:44:56,782 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-15] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 32, active threads = 0, queued tasks = 0, completed tasks = 54], outboundChannel[pool size = 24, active threads = 0, queued tasks = 0, completed tasks = 24], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 12]
+2025-03-18 09:45:57,741 INFO c.j.c.m.Lobby [clientInboundChannel-33] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 09:45:57,742 INFO c.j.c.s.ChessService [clientInboundChannel-33] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: g1 to f3, next turn: black
+2025-03-18 09:46:01,910 WARN c.j.c.s.ChessService [clientInboundChannel-36] Invalid move from b8 to b6 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:46:03,836 WARN c.j.c.s.ChessService [clientInboundChannel-39] Invalid move from b8 to b6 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:46:05,306 WARN c.j.c.s.ChessService [clientInboundChannel-42] Invalid move from b7 to b6 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:46:07,050 WARN c.j.c.s.ChessService [clientInboundChannel-45] Invalid move from b7 to b6 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:46:11,147 INFO c.j.c.m.Lobby [clientInboundChannel-48] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 09:46:11,148 INFO c.j.c.s.ChessService [clientInboundChannel-48] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: b8 to c6, next turn: white
+2025-03-18 09:46:19,831 INFO c.j.c.m.Lobby [clientInboundChannel-51] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wR, ]
+2025-03-18 09:46:19,836 INFO c.j.c.s.ChessService [clientInboundChannel-51] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: h1 to g1, next turn: black
+2025-03-18 09:55:26,882 WARN c.j.c.s.ChessService [clientInboundChannel-54] Invalid move from b7 to b6 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:55:28,095 WARN c.j.c.s.ChessService [clientInboundChannel-57] Invalid move from b7 to b5 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:55:29,304 WARN c.j.c.s.ChessService [clientInboundChannel-60] Invalid move from b7 to a6 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:55:31,180 INFO c.j.c.m.Lobby [clientInboundChannel-63] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wR, ]
+2025-03-18 09:55:31,181 INFO c.j.c.s.ChessService [clientInboundChannel-63] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: a8 to b8, next turn: white
+2025-03-18 09:55:37,811 INFO c.j.c.m.Lobby [clientInboundChannel-66] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , , , , , wN, , , wN, , , wP, wP, wP, wP, wP, wP, wP, wP, wR, , wB, wQ, wK, wB, wR, ]
+2025-03-18 09:55:37,812 INFO c.j.c.s.ChessService [clientInboundChannel-66] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: b1 to c3, next turn: black
+2025-03-18 09:55:42,557 WARN c.j.c.s.ChessService [clientInboundChannel-69] Invalid move from c6 to d5 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:55:43,952 INFO c.j.c.m.Lobby [clientInboundChannel-72] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , bN, , , , , , , wN, , , wN, , , wP, wP, wP, wP, wP, wP, wP, wP, wR, , wB, wQ, wK, wB, wR, ]
+2025-03-18 09:55:43,952 INFO c.j.c.s.ChessService [clientInboundChannel-72] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: c6 to d4, next turn: white
+2025-03-18 09:55:48,100 INFO c.j.c.m.Lobby [clientInboundChannel-75] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , wN, , , , , , , , bN, , , , , , , , , , wN, , , wP, wP, wP, wP, wP, wP, wP, wP, wR, , wB, wQ, wK, wB, wR, ]
+2025-03-18 09:55:48,101 INFO c.j.c.s.ChessService [clientInboundChannel-75] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: c3 to d5, next turn: black
+2025-03-18 09:55:53,314 INFO c.j.c.m.Lobby [clientInboundChannel-78] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , wN, , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, bN, wP, wP, wP, wR, , wB, wQ, wK, wB, wR, ]
+2025-03-18 09:55:53,314 INFO c.j.c.s.ChessService [clientInboundChannel-78] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: d4 to e2, next turn: white
+2025-03-18 09:56:02,355 INFO c.j.c.m.Lobby [clientInboundChannel-81] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , wN, , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, wB, wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:56:02,356 INFO c.j.c.s.ChessService [clientInboundChannel-81] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: f1 to e2, next turn: black
+2025-03-18 09:56:10,803 INFO c.j.c.m.Lobby [clientInboundChannel-84] Board state updated: [, bR, bB, bQ, bK, bB, , bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , bN, , , , , , wN, , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, wB, wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:56:10,803 INFO c.j.c.s.ChessService [clientInboundChannel-84] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: g8 to f6, next turn: white
+2025-03-18 09:56:16,894 INFO c.j.c.m.Lobby [clientInboundChannel-55] Board state updated: [, bR, bB, bQ, bK, bB, , bR, bP, bP, bP, bP, wN, bP, bP, bP, , , , , , bN, , , , , , , , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, wB, wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:56:16,894 INFO c.j.c.s.ChessService [clientInboundChannel-55] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: d5 to e7, next turn: black
+2025-03-18 09:56:23,962 INFO c.j.c.m.Lobby [clientInboundChannel-59] Board state updated: [, bR, bB, bQ, , bB, , bR, bP, bP, bP, bP, bK, bP, bP, bP, , , , , , bN, , , , , , , , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, wB, wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:56:23,962 INFO c.j.c.s.ChessService [clientInboundChannel-59] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: e8 to e7, next turn: white
+2025-03-18 09:56:30,602 INFO c.j.c.m.Lobby [clientInboundChannel-86] Board state updated: [, bR, bB, bQ, , bB, , bR, bP, bP, bP, bP, bK, bP, bP, bP, , , , , , bN, , , , , , , , , , , , , wB, , , , , , , , , , , wN, , , wP, wP, wP, wP, , wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:56:30,603 INFO c.j.c.s.ChessService [clientInboundChannel-86] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: e2 to c4, next turn: black
+2025-03-18 09:56:35,901 WARN c.j.c.s.ChessService [clientInboundChannel-89] Invalid move from d7 to d6 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:56:36,997 WARN c.j.c.s.ChessService [clientInboundChannel-92] Invalid move from d7 to d5 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:57:21,614 INFO c.j.c.m.Lobby [clientInboundChannel-93] Board state updated: [, bR, bB, bQ, , bB, , bR, bP, bP, bP, bP, , bP, bP, bP, , , , , bK, bN, , , , , , , , , , , , , wB, , , , , , , , , , , wN, , , wP, wP, wP, wP, , wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:57:21,614 INFO c.j.c.s.ChessService [clientInboundChannel-93] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: e7 to e6, next turn: white
+2025-03-18 09:57:29,676 WARN c.j.c.s.ChessService [clientInboundChannel-96] Invalid move from c4 to b6 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:57:31,037 INFO c.j.c.m.Lobby [clientInboundChannel-99] Board state updated: [, bR, bB, bQ, , bB, , bR, bP, bP, bP, bP, , bP, bP, bP, wB, , , , bK, bN, , , , , , , , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, , wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:57:31,038 INFO c.j.c.s.ChessService [clientInboundChannel-99] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: c4 to a6, next turn: black
+2025-03-18 09:57:35,006 WARN c.j.c.s.ChessService [clientInboundChannel-102] Invalid move from b7 to a6 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:58:31,997 WARN c.j.c.s.ChessService [clientInboundChannel-105] Invalid move from d7 to e7 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:58:33,264 WARN c.j.c.s.ChessService [clientInboundChannel-108] Invalid move from d7 to e7 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:58:34,372 WARN c.j.c.s.ChessService [clientInboundChannel-111] Invalid move from d7 to d8 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:58:35,326 WARN c.j.c.s.ChessService [clientInboundChannel-114] Invalid move from d7 to d8 by player 2pry32eb in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:58:36,451 INFO c.j.c.m.Lobby [clientInboundChannel-117] Board state updated: [, bR, bB, , bQ, bB, , bR, bP, bP, bP, bP, , bP, bP, bP, wB, , , , bK, bN, , , , , , , , , , , , , , , , , , , , , , , , wN, , , wP, wP, wP, wP, , wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:58:36,452 INFO c.j.c.s.ChessService [clientInboundChannel-117] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: d8 to e8, next turn: white
+2025-03-18 09:58:40,321 WARN c.j.c.s.ChessService [clientInboundChannel-120] Invalid move from f3 to e4 by player zuwxjxfk in lobby 174fae14-07a3-4331-9577-0ca58de5854c
+2025-03-18 09:58:41,586 INFO c.j.c.m.Lobby [clientInboundChannel-123] Board state updated: [, bR, bB, , bQ, bB, , bR, bP, bP, bP, bP, , bP, bP, bP, wB, , , , bK, bN, , , , , , , wN, , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, , wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:58:41,587 INFO c.j.c.s.ChessService [clientInboundChannel-123] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: f3 to e5, next turn: black
+2025-03-18 09:58:45,136 INFO c.j.c.m.Lobby [clientInboundChannel-126] Board state updated: [, bR, bB, bP, bQ, bB, , bR, bP, bP, bP, , , bP, bP, bP, wB, , , , bK, bN, , , , , , , wN, , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, , wP, wP, wP, wR, , wB, wQ, wK, , wR, ]
+2025-03-18 09:58:45,136 INFO c.j.c.s.ChessService [clientInboundChannel-126] Move made in lobby 174fae14-07a3-4331-9577-0ca58de5854c: d7 to d8, next turn: white
+2025-03-18 09:59:05,669 INFO c.j.c.s.ChessService [http-nio-8080-exec-1] Creating lobby with name: lobby 2
+2025-03-18 09:59:05,670 INFO c.j.c.m.Lobby [http-nio-8080-exec-1] Lobby created with ID: 32252cf3-eb1f-456c-a65d-f150d3122798
+2025-03-18 09:59:05,670 INFO c.j.c.m.Lobby [http-nio-8080-exec-1] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:59:05,670 INFO c.j.c.s.ChessService [http-nio-8080-exec-1] Created lobby: id=32252cf3-eb1f-456c-a65d-f150d3122798, name=lobby 2
+2025-03-18 09:59:05,681 INFO c.j.c.s.ChessService [clientInboundChannel-106] Player 4lfo0vnx joined lobby 32252cf3-eb1f-456c-a65d-f150d3122798
+2025-03-18 09:59:05,681 INFO c.j.c.s.ChessService [clientInboundChannel-106] Returning board state for lobby 32252cf3-eb1f-456c-a65d-f150d3122798: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:59:06,781 INFO c.j.c.m.Lobby [clientInboundChannel-105] White player set to: 4lfo0vnx
+2025-03-18 09:59:06,782 INFO c.j.c.s.ChessService [clientInboundChannel-105] Player 4lfo0vnx claimed white in lobby 32252cf3-eb1f-456c-a65d-f150d3122798
+2025-03-18 09:59:08,126 INFO c.j.c.m.Lobby [clientInboundChannel-112] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:59:08,127 INFO c.j.c.s.ChessService [clientInboundChannel-112] Move made in lobby 32252cf3-eb1f-456c-a65d-f150d3122798: f2 to f3, next turn: black
+2025-03-18 09:59:14,254 INFO c.j.c.s.ChessService [clientInboundChannel-127] Player jpwlzsd4 joined lobby 32252cf3-eb1f-456c-a65d-f150d3122798
+2025-03-18 09:59:14,255 INFO c.j.c.s.ChessService [clientInboundChannel-127] Returning board state for lobby 32252cf3-eb1f-456c-a65d-f150d3122798: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:59:14,923 INFO c.j.c.m.Lobby [clientInboundChannel-126] Black player set to: jpwlzsd4
+2025-03-18 09:59:14,923 INFO c.j.c.s.ChessService [clientInboundChannel-126] Player jpwlzsd4 claimed black in lobby 32252cf3-eb1f-456c-a65d-f150d3122798
+2025-03-18 09:59:16,793 INFO c.j.c.m.Lobby [clientInboundChannel-131] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , bP, bP, bP, bP, bP, , , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 09:59:16,794 INFO c.j.c.s.ChessService [clientInboundChannel-131] Move made in lobby 32252cf3-eb1f-456c-a65d-f150d3122798: c7 to c6, next turn: white
+2025-03-18 19:02:28,401 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 9340 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-18 19:02:28,402 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-18 19:02:28,403 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-18 19:02:29,004 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-18 19:02:29,009 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-18 19:02:29,012 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-18 19:02:29,012 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-18 19:02:29,056 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-18 19:02:29,057 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 612 ms
+2025-03-18 19:02:29,421 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-18 19:02:29,461 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-18 19:02:29,463 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-18 19:02:29,465 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6e03db1f]]
+2025-03-18 19:02:29,465 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-18 19:02:29,472 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 1.345 seconds (process running for 2.024)
+2025-03-18 19:02:34,149 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 19:02:34,149 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-03-18 19:02:34,150 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2025-03-18 19:02:40,408 INFO c.j.c.s.ChessService [http-nio-8080-exec-1] Creating lobby with name: lobby 6
+2025-03-18 19:02:40,410 INFO c.j.c.m.Lobby [http-nio-8080-exec-1] Lobby created with ID: 0fd4f37e-3b94-4b9e-8151-e0a50ff06ca3
+2025-03-18 19:02:40,411 INFO c.j.c.m.Lobby [http-nio-8080-exec-1] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:02:40,411 INFO c.j.c.s.ChessService [http-nio-8080-exec-1] Created lobby: id=0fd4f37e-3b94-4b9e-8151-e0a50ff06ca3, name=lobby 6
+2025-03-18 19:02:40,475 INFO c.j.c.s.ChessService [clientInboundChannel-19] Player dfdgbipr joined lobby 0fd4f37e-3b94-4b9e-8151-e0a50ff06ca3
+2025-03-18 19:02:40,475 INFO c.j.c.s.ChessService [clientInboundChannel-19] Returning board state for lobby 0fd4f37e-3b94-4b9e-8151-e0a50ff06ca3: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:03:29,423 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-12] WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 21, active threads = 0, queued tasks = 0, completed tasks = 21], outboundChannel[pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 4], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 2, completed tasks = 12]
+2025-03-18 19:07:50,231 INFO c.j.c.m.Lobby [clientInboundChannel-22] White player set to: dfdgbipr
+2025-03-18 19:07:50,232 INFO c.j.c.s.ChessService [clientInboundChannel-22] Player dfdgbipr claimed white in lobby 0fd4f37e-3b94-4b9e-8151-e0a50ff06ca3
+2025-03-18 19:15:19,021 INFO o.s.w.s.m.SubProtocolWebSocketHandler [http-nio-8080-exec-4] No messages received after 327148 ms. Closing WebSocketServerSockJsSession[id=xvu0r4dh].
+2025-03-18 19:30:24,154 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 95106 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-18 19:30:24,156 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-18 19:30:24,157 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-18 19:30:25,408 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-18 19:30:25,416 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-18 19:30:25,417 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-18 19:30:25,418 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-18 19:30:25,480 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-18 19:30:25,481 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1250 ms
+2025-03-18 19:30:26,316 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-18 19:30:26,346 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-18 19:30:26,369 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-18 19:30:26,373 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@55fee662]]
+2025-03-18 19:30:26,374 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-18 19:30:26,381 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 2.863 seconds (process running for 3.377)
+2025-03-18 19:30:26,690 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 19:30:26,690 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-3] Initializing Servlet 'dispatcherServlet'
+2025-03-18 19:30:26,690 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-3] Completed initialization in 0 ms
+2025-03-18 19:30:30,295 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Creating lobby with name: lobby 5
+2025-03-18 19:30:30,297 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Lobby created with ID: b329717f-dbe7-428d-8747-1dc416802f8d
+2025-03-18 19:30:30,298 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:30:30,298 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Created lobby: id=b329717f-dbe7-428d-8747-1dc416802f8d, name=lobby 5
+2025-03-18 19:30:30,444 INFO c.j.c.s.ChessService [clientInboundChannel-10] Player jtjhjf4x joined lobby b329717f-dbe7-428d-8747-1dc416802f8d
+2025-03-18 19:30:30,445 INFO c.j.c.s.ChessService [clientInboundChannel-10] Returning board state for lobby b329717f-dbe7-428d-8747-1dc416802f8d: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:30:31,428 INFO c.j.c.m.Lobby [clientInboundChannel-13] White player set to: jtjhjf4x
+2025-03-18 19:30:31,428 INFO c.j.c.s.ChessService [clientInboundChannel-13] Player jtjhjf4x claimed white in lobby b329717f-dbe7-428d-8747-1dc416802f8d
+2025-03-18 19:30:54,446 INFO c.j.c.s.ChessService [http-nio-8080-exec-3] Creating lobby with name: lobby 6
+2025-03-18 19:30:54,447 INFO c.j.c.m.Lobby [http-nio-8080-exec-3] Lobby created with ID: b6c913a9-ee18-46e5-ac42-9662b9902e65
+2025-03-18 19:30:54,447 INFO c.j.c.m.Lobby [http-nio-8080-exec-3] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:30:54,447 INFO c.j.c.s.ChessService [http-nio-8080-exec-3] Created lobby: id=b6c913a9-ee18-46e5-ac42-9662b9902e65, name=lobby 6
+2025-03-18 19:30:54,459 INFO c.j.c.s.ChessService [clientInboundChannel-3] Player tb3lrl15 joined lobby b6c913a9-ee18-46e5-ac42-9662b9902e65
+2025-03-18 19:30:54,460 INFO c.j.c.s.ChessService [clientInboundChannel-3] Returning board state for lobby b6c913a9-ee18-46e5-ac42-9662b9902e65: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:30:55,984 INFO c.j.c.m.Lobby [clientInboundChannel-6] White player set to: tb3lrl15
+2025-03-18 19:30:55,985 INFO c.j.c.s.ChessService [clientInboundChannel-6] Player tb3lrl15 claimed white in lobby b6c913a9-ee18-46e5-ac42-9662b9902e65
+2025-03-18 19:30:56,001 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8080-exec-1] Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'application/javascript;charset=UTF-8'
+2025-03-18 19:30:56,003 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'application/javascript;charset=UTF-8']
+2025-03-18 19:31:00,412 INFO c.j.c.s.ChessService [clientInboundChannel-20] Player fpgs4vvp joined lobby b6c913a9-ee18-46e5-ac42-9662b9902e65
+2025-03-18 19:31:00,412 INFO c.j.c.s.ChessService [clientInboundChannel-20] Returning board state for lobby b6c913a9-ee18-46e5-ac42-9662b9902e65: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:31:01,381 INFO c.j.c.m.Lobby [clientInboundChannel-24] Black player set to: fpgs4vvp
+2025-03-18 19:31:01,381 INFO c.j.c.s.ChessService [clientInboundChannel-24] Player fpgs4vvp claimed black in lobby b6c913a9-ee18-46e5-ac42-9662b9902e65
+2025-03-18 19:31:04,577 INFO c.j.c.m.Lobby [clientInboundChannel-27] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , wP, , , , , , , , , , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:31:04,578 ERROR c.j.c.s.ChessService [clientInboundChannel-27] Error making move in lobby b6c913a9-ee18-46e5-ac42-9662b9902e65: Index -1 out of bounds for length 64
+2025-03-18 19:31:07,183 WARN c.j.c.s.ChessService [clientInboundChannel-29] Player tb3lrl15 attempted to move out of turn in lobby b6c913a9-ee18-46e5-ac42-9662b9902e65
+2025-03-18 19:31:10,859 INFO c.j.c.m.Lobby [clientInboundChannel-1] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , bP, bP, bP, bP, bP, , , bP, , , , , , , , , , , , , , , , , , , wP, , , , , , , , , , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:31:10,860 INFO c.j.c.s.ChessService [clientInboundChannel-1] Move made in lobby b6c913a9-ee18-46e5-ac42-9662b9902e65: c7 to c6, next turn: white
+2025-03-18 19:31:14,681 INFO c.j.c.m.Lobby [clientInboundChannel-2] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , bP, bP, bP, bP, bP, , , bP, , , , , , , , , , , , , , , , , , , wP, , , , , , , wP, , , , wP, wP, wP, wP, , , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:31:14,682 ERROR c.j.c.s.ChessService [clientInboundChannel-2] Error making move in lobby b6c913a9-ee18-46e5-ac42-9662b9902e65: Index -1 out of bounds for length 64
+2025-03-18 19:31:16,476 WARN c.j.c.s.ChessService [clientInboundChannel-7] Player tb3lrl15 attempted to move out of turn in lobby b6c913a9-ee18-46e5-ac42-9662b9902e65
+2025-03-18 19:31:26,297 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-7] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 4 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(4)-CONNECTED(4)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 32, active threads = 0, queued tasks = 0, completed tasks = 72], outboundChannel[pool size = 22, active threads = 0, queued tasks = 0, completed tasks = 22], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 12]
+2025-03-18 19:32:44,075 INFO c.j.c.s.ChessService [http-nio-8080-exec-4] Creating lobby with name: lobby 7
+2025-03-18 19:32:44,075 INFO c.j.c.m.Lobby [http-nio-8080-exec-4] Lobby created with ID: 3fb11f03-f9a3-4bbb-968b-b2b3f596009f
+2025-03-18 19:32:44,075 INFO c.j.c.m.Lobby [http-nio-8080-exec-4] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:32:44,076 INFO c.j.c.s.ChessService [http-nio-8080-exec-4] Created lobby: id=3fb11f03-f9a3-4bbb-968b-b2b3f596009f, name=lobby 7
+2025-03-18 19:32:44,088 INFO c.j.c.s.ChessService [clientInboundChannel-54] Player axoybrgr joined lobby 3fb11f03-f9a3-4bbb-968b-b2b3f596009f
+2025-03-18 19:32:44,088 INFO c.j.c.s.ChessService [clientInboundChannel-54] Returning board state for lobby 3fb11f03-f9a3-4bbb-968b-b2b3f596009f: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:32:45,161 INFO c.j.c.m.Lobby [clientInboundChannel-57] White player set to: axoybrgr
+2025-03-18 19:32:45,162 INFO c.j.c.s.ChessService [clientInboundChannel-57] Player axoybrgr claimed white in lobby 3fb11f03-f9a3-4bbb-968b-b2b3f596009f
+2025-03-18 19:32:48,375 INFO c.j.c.s.ChessService [clientInboundChannel-49] Player qlhziotm joined lobby 3fb11f03-f9a3-4bbb-968b-b2b3f596009f
+2025-03-18 19:32:48,376 INFO c.j.c.s.ChessService [clientInboundChannel-49] Returning board state for lobby 3fb11f03-f9a3-4bbb-968b-b2b3f596009f: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:32:49,129 INFO c.j.c.m.Lobby [clientInboundChannel-53] Black player set to: qlhziotm
+2025-03-18 19:32:49,130 INFO c.j.c.s.ChessService [clientInboundChannel-53] Player qlhziotm claimed black in lobby 3fb11f03-f9a3-4bbb-968b-b2b3f596009f
+2025-03-18 19:32:52,508 INFO c.j.c.m.Lobby [clientInboundChannel-56] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:32:52,509 ERROR c.j.c.s.ChessService [clientInboundChannel-56] Error making move in lobby 3fb11f03-f9a3-4bbb-968b-b2b3f596009f: Index -1 out of bounds for length 64
+2025-03-18 19:34:05,008 INFO c.j.c.s.ChessService [http-nio-8080-exec-4] Creating lobby with name: lobby 8
+2025-03-18 19:34:05,009 INFO c.j.c.m.Lobby [http-nio-8080-exec-4] Lobby created with ID: 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:34:05,009 INFO c.j.c.m.Lobby [http-nio-8080-exec-4] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:34:05,009 INFO c.j.c.s.ChessService [http-nio-8080-exec-4] Created lobby: id=38fa2771-f245-4906-8599-f3406910ccfe, name=lobby 8
+2025-03-18 19:34:05,023 INFO c.j.c.s.ChessService [clientInboundChannel-86] Player d4mtk1p2 joined lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:34:05,023 INFO c.j.c.s.ChessService [clientInboundChannel-86] Returning board state for lobby 38fa2771-f245-4906-8599-f3406910ccfe: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:34:08,994 INFO c.j.c.s.ChessService [clientInboundChannel-79] Player k1tuokpp joined lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:34:08,994 INFO c.j.c.s.ChessService [clientInboundChannel-79] Returning board state for lobby 38fa2771-f245-4906-8599-f3406910ccfe: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:34:10,823 INFO c.j.c.m.Lobby [clientInboundChannel-82] Black player set to: k1tuokpp
+2025-03-18 19:34:10,823 INFO c.j.c.s.ChessService [clientInboundChannel-82] Player k1tuokpp claimed black in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:34:12,653 INFO c.j.c.m.Lobby [clientInboundChannel-84] White player set to: d4mtk1p2
+2025-03-18 19:34:12,654 INFO c.j.c.s.ChessService [clientInboundChannel-84] Player d4mtk1p2 claimed white in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:34:13,907 INFO c.j.c.m.Lobby [clientInboundChannel-88] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:34:13,908 ERROR c.j.c.s.ChessService [clientInboundChannel-88] Error making move in lobby 38fa2771-f245-4906-8599-f3406910ccfe: Index -1 out of bounds for length 64
+2025-03-18 19:35:03,783 WARN c.j.c.s.ChessService [clientInboundChannel-97] Player d4mtk1p2 attempted to move out of turn in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:35:07,581 INFO c.j.c.m.Lobby [clientInboundChannel-100] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , bP, bP, bP, bP, bP, , , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:35:07,582 INFO c.j.c.s.ChessService [clientInboundChannel-100] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: c7 to c6, next turn: white
+2025-03-18 19:35:10,944 INFO c.j.c.m.Lobby [clientInboundChannel-103] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , bP, bP, bP, bP, bP, , , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, , wP, wP, wP, wP, wP, , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:35:10,945 INFO c.j.c.s.ChessService [clientInboundChannel-103] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f2 to f3, next turn: black
+2025-03-18 19:35:13,854 INFO c.j.c.m.Lobby [clientInboundChannel-106] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , , bP, bP, bP, bP, , , bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, , wP, wP, wP, wP, wP, , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:35:13,855 INFO c.j.c.s.ChessService [clientInboundChannel-106] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: d7 to d6, next turn: white
+2025-03-18 19:35:16,946 INFO c.j.c.m.Lobby [clientInboundChannel-109] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , , bP, bP, bP, bP, , , bP, bP, , , , , , , , , , , , , , , wP, , , , , , , , , , , wP, wP, , wP, wP, , wP, wP, , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:35:16,946 INFO c.j.c.s.ChessService [clientInboundChannel-109] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: c2 to c4, next turn: black
+2025-03-18 19:35:21,345 INFO c.j.c.m.Lobby [clientInboundChannel-112] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , , bP, , bP, bP, , , bP, bP, , , , , , , , , , bP, , , , , wP, , , , , , , , , , , wP, wP, , wP, wP, , wP, wP, , , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 19:35:21,346 INFO c.j.c.s.ChessService [clientInboundChannel-112] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f7 to f5, next turn: white
+2025-03-18 19:35:26,690 INFO c.j.c.m.Lobby [clientInboundChannel-115] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , , bP, , bP, bP, , , bP, bP, , , , , , , , , , bP, , , , , wP, , , , , , , , , , , wP, wP, wN, wP, wP, , wP, wP, , , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 19:35:26,691 INFO c.j.c.s.ChessService [clientInboundChannel-115] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: g1 to h3, next turn: black
+2025-03-18 19:35:32,772 INFO c.j.c.m.Lobby [clientInboundChannel-118] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , , , , , , bP, bP, , , , , wP, , , , , , , , , , , wP, wP, wN, wP, wP, , wP, wP, , , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 19:35:32,773 INFO c.j.c.s.ChessService [clientInboundChannel-118] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: e7 to e5, next turn: white
+2025-03-18 19:35:36,310 INFO c.j.c.m.Lobby [clientInboundChannel-121] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , , , , , , bP, bP, , , , , wP, , , , , , , , , , wP, wP, wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 19:35:36,311 INFO c.j.c.s.ChessService [clientInboundChannel-121] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: e2 to e3, next turn: black
+2025-03-18 19:35:42,822 WARN c.j.c.s.ChessService [clientInboundChannel-124] Invalid move from c8 to h4 by player k1tuokpp in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:36:32,609 INFO c.j.c.m.Lobby [clientInboundChannel-127] Board state updated: [bR, bN, , bQ, bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, bB, , , , , , , , bP, bP, , , , , wP, , , , , , , , , , wP, wP, wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 19:36:32,610 INFO c.j.c.s.ChessService [clientInboundChannel-127] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: c8 to e6, next turn: white
+2025-03-18 19:36:37,825 INFO c.j.c.m.Lobby [clientInboundChannel-130] Board state updated: [bR, bN, , bQ, bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, bB, , , , , , , , bP, bP, , , , , wP, , , , , , , , , wB, wP, wP, wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 19:36:37,826 INFO c.j.c.s.ChessService [clientInboundChannel-130] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f1 to d3, next turn: black
+2025-03-18 19:36:41,436 INFO c.j.c.m.Lobby [clientInboundChannel-133] Board state updated: [bR, bN, , bQ, bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , , , , , , bP, bP, , , , , bB, , , , , , , , , wB, wP, wP, wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 19:36:41,437 INFO c.j.c.s.ChessService [clientInboundChannel-133] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: e6 to c4, next turn: white
+2025-03-18 19:36:45,552 INFO c.j.c.m.Lobby [clientInboundChannel-136] Board state updated: [bR, bN, , bQ, bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , , , , , , bP, bP, , , , , bB, , wB, , , , , , , , wP, wP, wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 19:36:45,553 INFO c.j.c.s.ChessService [clientInboundChannel-136] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: d3 to e4, next turn: black
+2025-03-18 19:36:58,425 INFO c.j.c.m.Lobby [clientInboundChannel-139] Board state updated: [bR, bN, , bQ, bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , , , , , , bP, , , , , , bB, , bP, , , , , , , , wP, wP, wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 19:36:58,425 INFO c.j.c.s.ChessService [clientInboundChannel-139] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f5 to e4, next turn: white
+2025-03-18 19:37:02,260 WARN c.j.c.s.ChessService [clientInboundChannel-142] Invalid move from f3 to f5 by player d4mtk1p2 in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:37:03,486 INFO c.j.c.m.Lobby [clientInboundChannel-145] Board state updated: [bR, bN, , bQ, bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , , , , , , bP, , , , , , bB, , bP, wP, , , , , , , wP, , wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 19:37:03,487 INFO c.j.c.s.ChessService [clientInboundChannel-145] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f3 to f4, next turn: black
+2025-03-18 19:37:09,244 WARN c.j.c.s.ChessService [clientInboundChannel-148] Invalid move from e4 to f3 by player k1tuokpp in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:37:30,164 INFO c.j.c.m.Lobby [clientInboundChannel-151] Board state updated: [bR, bN, , , bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , , , , , , bP, , , , , , bB, , bP, wP, , bQ, , , , , wP, , wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 19:37:30,165 INFO c.j.c.s.ChessService [clientInboundChannel-151] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: d8 to h4, next turn: white
+2025-03-18 19:37:39,166 WARN c.j.c.s.ChessService [clientInboundChannel-154] Invalid move from d1 to a5 by player d4mtk1p2 in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:37:41,982 INFO c.j.c.m.Lobby [clientInboundChannel-157] Board state updated: [bR, bN, , , bK, bB, bN, bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , , , , , , bP, , , , wQ, , bB, , bP, wP, , bQ, , , , , wP, , wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, , wK, , , wR]
+2025-03-18 19:37:41,982 INFO c.j.c.s.ChessService [clientInboundChannel-157] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: d1 to a4, next turn: black
+2025-03-18 19:37:57,693 INFO c.j.c.m.Lobby [clientInboundChannel-160] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , bN, , , , , bP, , , , wQ, , bB, , bP, wP, , bQ, , , , , wP, , wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, , wK, , , wR]
+2025-03-18 19:37:57,694 INFO c.j.c.s.ChessService [clientInboundChannel-160] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: g8 to h6, next turn: white
+2025-03-18 19:38:06,228 INFO c.j.c.m.Lobby [clientInboundChannel-163] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , bN, , , , , bP, , , , wQ, , bB, , bP, wP, , bQ, , , , , wP, , wP, wN, wP, wP, , wP, , , , wP, wR, wN, wB, wK, , , , wR]
+2025-03-18 19:38:06,229 INFO c.j.c.s.ChessService [clientInboundChannel-163] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: e1 to d1, next turn: black
+2025-03-18 19:38:11,948 INFO c.j.c.m.Lobby [clientInboundChannel-166] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , bN, , , , , bP, , , , wQ, , , , bP, wP, , bQ, , , , , wP, , wP, wN, wP, wP, , wP, bB, , , wP, wR, wN, wB, wK, , , , wR]
+2025-03-18 19:38:11,950 INFO c.j.c.m.Lobby [clientInboundChannel-166] Game over! Black wins by checkmate!
+2025-03-18 19:38:11,950 INFO c.j.c.s.ChessService [clientInboundChannel-166] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: c4 to e2, next turn: white
+2025-03-18 19:38:23,997 INFO c.j.c.m.Lobby [clientInboundChannel-169] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , bN, , , , , bP, , wN, , wQ, , , , bP, wP, , bQ, , , , , wP, , wP, , wP, wP, , wP, bB, , , wP, wR, wN, wB, wK, , , , wR]
+2025-03-18 19:38:23,997 INFO c.j.c.s.ChessService [clientInboundChannel-169] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: h3 to g5, next turn: black
+2025-03-18 19:38:30,007 INFO c.j.c.m.Lobby [clientInboundChannel-172] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , bN, , , , , bP, , wN, , wQ, , , , bP, wP, , bQ, , , , , wP, bB, wP, , wP, wP, , wP, , , , wP, wR, wN, wB, wK, , , , wR]
+2025-03-18 19:38:30,010 INFO c.j.c.m.Lobby [clientInboundChannel-172] Game over! Black wins by checkmate!
+2025-03-18 19:38:30,010 INFO c.j.c.s.ChessService [clientInboundChannel-172] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: e2 to f3, next turn: white
+2025-03-18 19:38:35,275 INFO c.j.c.m.Lobby [clientInboundChannel-175] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , bN, , , , , bP, wP, wN, , wQ, , , , bP, , , bQ, , , , , wP, bB, wP, , wP, wP, , wP, , , , wP, wR, wN, wB, wK, , , , wR]
+2025-03-18 19:38:35,275 INFO c.j.c.s.ChessService [clientInboundChannel-175] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f4 to f5, next turn: black
+2025-03-18 19:38:39,504 INFO c.j.c.m.Lobby [clientInboundChannel-178] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , bP, bP, , , , bN, , , , , bP, wP, wN, , wQ, , , , bP, , , , , , , , wP, bB, bQ, , wP, wP, , wP, , , , wP, wR, wN, wB, wK, , , , wR]
+2025-03-18 19:38:39,505 INFO c.j.c.m.Lobby [clientInboundChannel-178] Game over! Black wins by checkmate!
+2025-03-18 19:38:39,505 INFO c.j.c.s.ChessService [clientInboundChannel-178] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: h4 to g3, next turn: white
+2025-03-18 19:38:47,107 WARN c.j.c.s.ChessService [clientInboundChannel-181] Invalid move from a4 to d7 by player d4mtk1p2 in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:38:53,839 INFO c.j.c.m.Lobby [clientInboundChannel-184] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , wQ, bP, , , , bN, , , , , bP, wP, wN, , , , , , bP, , , , , , , , wP, bB, bQ, , wP, wP, , wP, , , , wP, wR, wN, wB, wK, , , , wR]
+2025-03-18 19:38:53,840 INFO c.j.c.m.Lobby [clientInboundChannel-184] Game over! White wins by checkmate!
+2025-03-18 19:38:53,840 INFO c.j.c.s.ChessService [clientInboundChannel-184] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: a4 to c6, next turn: black
+2025-03-18 19:39:01,725 INFO c.j.c.m.Lobby [clientInboundChannel-187] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , wQ, bP, , , , bN, , , , , bP, wP, wN, , , , , , bP, , , , , , , , wP, bB, , , wP, wP, , wP, , , , wP, wR, wN, wB, wK, bQ, , , wR]
+2025-03-18 19:39:01,725 INFO c.j.c.m.Lobby [clientInboundChannel-187] Game over! Black wins by checkmate!
+2025-03-18 19:39:01,726 INFO c.j.c.s.ChessService [clientInboundChannel-187] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: g3 to e1, next turn: white
+2025-03-18 19:39:05,987 INFO c.j.c.m.Lobby [clientInboundChannel-190] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , wQ, bP, , , , bN, , , , , bP, wP, wN, , , , , , bP, , , , , , , , wP, bB, , wP, wP, wP, , wP, , , , , wR, wN, wB, wK, bQ, , , wR]
+2025-03-18 19:39:05,987 INFO c.j.c.m.Lobby [clientInboundChannel-190] Game over! White wins by checkmate!
+2025-03-18 19:39:05,987 INFO c.j.c.s.ChessService [clientInboundChannel-190] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: h2 to h3, next turn: black
+2025-03-18 19:39:08,953 INFO c.j.c.m.Lobby [clientInboundChannel-193] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , wQ, bP, , , , bN, , , , , bP, wP, wN, , , , , , bP, , , , , , , , wP, bB, , wP, wP, wP, , wP, , , , , wR, wN, wB, wK, , bQ, , wR]
+2025-03-18 19:39:08,954 INFO c.j.c.m.Lobby [clientInboundChannel-193] Game over! Black wins by checkmate!
+2025-03-18 19:39:08,954 INFO c.j.c.s.ChessService [clientInboundChannel-193] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: e1 to f1, next turn: white
+2025-03-18 19:39:18,830 INFO c.j.c.m.Lobby [clientInboundChannel-196] Board state updated: [bR, bN, , , bK, bB, , bR, bP, bP, , , , , bP, bP, , , wQ, bP, , , , bN, , , , , bP, wP, wN, , , , , , bP, , , , , , , , wP, bB, , wP, wP, wP, , wP, , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:39:18,831 INFO c.j.c.m.Lobby [clientInboundChannel-196] Game over! White wins by checkmate!
+2025-03-18 19:39:18,831 INFO c.j.c.s.ChessService [clientInboundChannel-196] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: h1 to h2, next turn: black
+2025-03-18 19:39:56,520 INFO c.j.c.m.Lobby [clientInboundChannel-199] Board state updated: [bR, bN, , , bK, , , bR, bP, bP, , , bB, , bP, bP, , , wQ, bP, , , , bN, , , , , bP, wP, wN, , , , , , bP, , , , , , , , wP, bB, , wP, wP, wP, , wP, , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:39:56,521 INFO c.j.c.m.Lobby [clientInboundChannel-199] Game over! Black wins by checkmate!
+2025-03-18 19:39:56,521 INFO c.j.c.s.ChessService [clientInboundChannel-199] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f8 to e7, next turn: white
+2025-03-18 19:39:59,633 INFO c.j.c.m.Lobby [clientInboundChannel-202] Board state updated: [bR, bN, , , bK, , , bR, bP, bP, , , bB, , bP, bP, , , wQ, bP, , , , bN, , , , , bP, wP, wN, , , , , , bP, , , , wP, , , , wP, bB, , wP, , wP, , wP, , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:39:59,634 INFO c.j.c.m.Lobby [clientInboundChannel-202] Game over! White wins by checkmate!
+2025-03-18 19:39:59,634 INFO c.j.c.s.ChessService [clientInboundChannel-202] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: a2 to a3, next turn: black
+2025-03-18 19:40:02,371 INFO c.j.c.m.Lobby [clientInboundChannel-205] Board state updated: [bR, bN, , , bK, bR, , , bP, bP, , , bB, , bP, bP, , , wQ, bP, , , , bN, , , , , bP, wP, wN, , , , , , bP, , , , wP, , , , wP, bB, , wP, , wP, , wP, , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:40:02,372 INFO c.j.c.m.Lobby [clientInboundChannel-205] Game over! Black wins by checkmate!
+2025-03-18 19:40:02,372 INFO c.j.c.s.ChessService [clientInboundChannel-205] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: h8 to f8, next turn: white
+2025-03-18 19:40:07,332 INFO c.j.c.m.Lobby [clientInboundChannel-208] Board state updated: [bR, bN, , , bK, bR, , , bP, bP, , , bB, , bP, bP, , , wQ, bP, , , , bN, , , , , bP, wP, wN, , , , , , bP, , , , wP, , , wP, wP, bB, , wP, , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:40:07,332 INFO c.j.c.m.Lobby [clientInboundChannel-208] Game over! White wins by checkmate!
+2025-03-18 19:40:07,332 INFO c.j.c.s.ChessService [clientInboundChannel-208] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: d2 to d3, next turn: black
+2025-03-18 19:40:10,686 INFO c.j.c.m.Lobby [clientInboundChannel-211] Board state updated: [bR, bN, , , bK, , , , bP, bP, , , bB, , bP, bP, , , wQ, bP, , , , bN, , , , , bP, bR, wN, , , , , , bP, , , , wP, , , wP, wP, bB, , wP, , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:40:10,686 INFO c.j.c.m.Lobby [clientInboundChannel-211] Game over! Black wins by checkmate!
+2025-03-18 19:40:10,687 INFO c.j.c.s.ChessService [clientInboundChannel-211] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f8 to f5, next turn: white
+2025-03-18 19:40:14,347 WARN c.j.c.s.ChessService [clientInboundChannel-214] Invalid move from e3 to d4 by player d4mtk1p2 in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:40:15,650 INFO c.j.c.m.Lobby [clientInboundChannel-217] Board state updated: [bR, bN, , , bK, , , , bP, bP, , , bB, , bP, bP, , , wQ, bP, , , , bN, , , , , bP, bR, wN, , , , , , wP, , , , wP, , , , wP, bB, , wP, , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:40:15,651 INFO c.j.c.m.Lobby [clientInboundChannel-217] Game over! White wins by checkmate!
+2025-03-18 19:40:15,651 INFO c.j.c.s.ChessService [clientInboundChannel-217] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: d3 to e4, next turn: black
+2025-03-18 19:40:24,429 WARN c.j.c.s.ChessService [clientInboundChannel-220] Invalid move from h7 to h5 by player k1tuokpp in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:40:26,424 WARN c.j.c.s.ChessService [clientInboundChannel-223] Invalid move from e5 to e3 by player k1tuokpp in lobby 38fa2771-f245-4906-8599-f3406910ccfe
+2025-03-18 19:40:29,303 INFO c.j.c.m.Lobby [clientInboundChannel-226] Board state updated: [bR, bN, , , bK, , , , bP, bP, , , bB, , bP, bP, , , wQ, , , , , bN, , , , bP, bP, bR, wN, , , , , , wP, , , , wP, , , , wP, bB, , wP, , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:40:29,304 INFO c.j.c.m.Lobby [clientInboundChannel-226] Game over! Black wins by checkmate!
+2025-03-18 19:40:29,304 INFO c.j.c.s.ChessService [clientInboundChannel-226] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: d6 to d5, next turn: white
+2025-03-18 19:40:34,365 INFO c.j.c.m.Lobby [clientInboundChannel-229] Board state updated: [bR, bN, , , bK, , , , bP, bP, , , bB, , bP, bP, , , wQ, , , , , bN, , , , wP, bP, bR, wN, , , , , , , , , , wP, , , , wP, bB, , wP, , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:40:34,366 INFO c.j.c.m.Lobby [clientInboundChannel-229] Game over! White wins by checkmate!
+2025-03-18 19:40:34,366 INFO c.j.c.s.ChessService [clientInboundChannel-229] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: e4 to d5, next turn: black
+2025-03-18 19:40:41,425 INFO c.j.c.m.Lobby [clientInboundChannel-201] Board state updated: [bR, bN, , , bK, , , , bP, bP, , , bB, , bP, bP, , , wQ, , , , , bN, , , , wP, bP, , wN, , , , , , , bR, , , wP, , , , wP, bB, , wP, , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:40:41,426 INFO c.j.c.m.Lobby [clientInboundChannel-201] Game over! Black wins by checkmate!
+2025-03-18 19:40:41,426 INFO c.j.c.s.ChessService [clientInboundChannel-201] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f5 to f4, next turn: white
+2025-03-18 19:40:49,596 INFO c.j.c.m.Lobby [clientInboundChannel-204] Board state updated: [bR, bN, , , bK, , , , bP, bP, , , bB, wN, bP, bP, , , wQ, , , , , bN, , , , wP, bP, , , , , , , , , bR, , , wP, , , , wP, bB, , wP, , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:40:49,597 INFO c.j.c.m.Lobby [clientInboundChannel-204] Game over! White wins by checkmate!
+2025-03-18 19:40:49,597 INFO c.j.c.s.ChessService [clientInboundChannel-204] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: g5 to f7, next turn: black
+2025-03-18 19:41:23,298 INFO c.j.c.m.Lobby [clientInboundChannel-231] Board state updated: [bR, bN, , , bK, , , , bP, bP, , , bB, wN, bP, bP, , , wQ, , , , , bN, , , , wP, bP, , , , , , , bR, , , , , wP, , , , wP, bB, , wP, , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:41:23,298 INFO c.j.c.m.Lobby [clientInboundChannel-231] Game over! Black wins by checkmate!
+2025-03-18 19:41:23,299 INFO c.j.c.s.ChessService [clientInboundChannel-231] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: f4 to d4, next turn: white
+2025-03-18 19:41:33,391 INFO c.j.c.m.Lobby [clientInboundChannel-234] Board state updated: [bR, bN, , , bK, , , , bP, bP, , , bB, wN, bP, bP, , , wQ, , , , , bN, , , , wP, bP, , , , , , , bR, , , , wP, wP, , , , wP, bB, , , , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:41:33,392 INFO c.j.c.m.Lobby [clientInboundChannel-234] Game over! White wins by checkmate!
+2025-03-18 19:41:33,392 INFO c.j.c.s.ChessService [clientInboundChannel-234] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: h3 to h4, next turn: black
+2025-03-18 19:41:37,521 INFO c.j.c.m.Lobby [clientInboundChannel-237] Board state updated: [bR, , , , bK, , , , bP, bP, , , bB, wN, bP, bP, bN, , wQ, , , , , bN, , , , wP, bP, , , , , , , bR, , , , wP, wP, , , , wP, bB, , , , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:41:37,521 INFO c.j.c.m.Lobby [clientInboundChannel-237] Game over! Black wins by checkmate!
+2025-03-18 19:41:37,522 INFO c.j.c.s.ChessService [clientInboundChannel-237] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: b8 to a6, next turn: white
+2025-03-18 19:41:42,006 INFO c.j.c.m.Lobby [clientInboundChannel-240] Board state updated: [bR, , , , bK, , , , bP, bP, , , bB, wN, bP, bP, bN, , wQ, , , , , bN, , , , wP, bP, , , , , , , bR, , , , wP, wP, , , , wP, bB, , , wR, wP, , , , , , wR, , wN, wB, wK, , bQ, , ]
+2025-03-18 19:41:42,007 INFO c.j.c.m.Lobby [clientInboundChannel-240] Game over! White wins by checkmate!
+2025-03-18 19:41:42,007 INFO c.j.c.s.ChessService [clientInboundChannel-240] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: a1 to a2, next turn: black
+2025-03-18 19:41:46,273 INFO c.j.c.m.Lobby [clientInboundChannel-243] Board state updated: [, , bR, , bK, , , , bP, bP, , , bB, wN, bP, bP, bN, , wQ, , , , , bN, , , , wP, bP, , , , , , , bR, , , , wP, wP, , , , wP, bB, , , wR, wP, , , , , , wR, , wN, wB, wK, , bQ, , ]
+2025-03-18 19:41:46,274 INFO c.j.c.m.Lobby [clientInboundChannel-243] Game over! Black wins by checkmate!
+2025-03-18 19:41:46,274 INFO c.j.c.s.ChessService [clientInboundChannel-243] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: a8 to c8, next turn: white
+2025-03-18 19:41:49,053 INFO c.j.c.m.Lobby [clientInboundChannel-246] Board state updated: [, , bR, , bK, , , , bP, bP, wQ, , bB, wN, bP, bP, bN, , , , , , , bN, , , , wP, bP, , , , , , , bR, , , , wP, wP, , , , wP, bB, , , wR, wP, , , , , , wR, , wN, wB, wK, , bQ, , ]
+2025-03-18 19:41:49,053 INFO c.j.c.s.ChessService [clientInboundChannel-246] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: c6 to c7, next turn: black
+2025-03-18 19:41:53,941 INFO c.j.c.m.Lobby [clientInboundChannel-249] Board state updated: [, , , , bK, , , , bP, bP, bR, , bB, wN, bP, bP, bN, , , , , , , bN, , , , wP, bP, , , , , , , bR, , , , wP, wP, , , , wP, bB, , , wR, wP, , , , , , wR, , wN, wB, wK, , bQ, , ]
+2025-03-18 19:41:53,942 INFO c.j.c.m.Lobby [clientInboundChannel-249] Game over! Black wins by checkmate!
+2025-03-18 19:41:53,942 INFO c.j.c.s.ChessService [clientInboundChannel-249] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: c8 to c7, next turn: white
+2025-03-18 19:41:56,857 INFO c.j.c.m.Lobby [clientInboundChannel-252] Board state updated: [, , , , bK, , , , bP, bP, bR, , bB, wN, bP, bP, bN, , , , , , , bN, , , , wP, bP, , , , , , , bR, , , , wP, wP, , , , wP, bB, , , , wP, , , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:41:56,857 INFO c.j.c.s.ChessService [clientInboundChannel-252] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: a2 to a1, next turn: black
+2025-03-18 19:42:02,338 INFO c.j.c.m.Lobby [clientInboundChannel-255] Board state updated: [, , , , bK, , , , bP, bP, , , bB, wN, bP, bP, bN, , , , , , , bN, , , , wP, bP, , , , , , , bR, , , , wP, wP, , , , wP, bB, , , , wP, bR, , , , , wR, wR, wN, wB, wK, , bQ, , ]
+2025-03-18 19:42:02,339 INFO c.j.c.m.Lobby [clientInboundChannel-255] Game over! Black wins by checkmate!
+2025-03-18 19:42:02,339 INFO c.j.c.s.ChessService [clientInboundChannel-255] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: c7 to c2, next turn: white
+2025-03-18 19:42:05,692 INFO c.j.c.m.Lobby [clientInboundChannel-258] Board state updated: [, , , , bK, , , , bP, bP, , , bB, wN, bP, bP, bN, , , , , , , bN, , , , wP, bP, , , , , , , bR, , , , wP, wP, , , , wP, bB, , , wR, wP, bR, , , , , wR, , wN, wB, wK, , bQ, , ]
+2025-03-18 19:42:05,693 INFO c.j.c.s.ChessService [clientInboundChannel-258] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: a1 to a2, next turn: black
+2025-03-18 19:42:28,121 INFO c.j.c.m.Lobby [clientInboundChannel-261] Board state updated: [, , , , bK, , , , bP, bP, , , bB, wN, bP, bP, , , , , , , , bN, , , , wP, bP, , , , , bN, , bR, , , , wP, wP, , , , wP, bB, , , wR, wP, bR, , , , , wR, , wN, wB, wK, , bQ, , ]
+2025-03-18 19:42:28,121 INFO c.j.c.m.Lobby [clientInboundChannel-261] Game over! Black wins by checkmate!
+2025-03-18 19:42:28,121 INFO c.j.c.s.ChessService [clientInboundChannel-261] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: a6 to b4, next turn: white
+2025-03-18 19:42:36,465 INFO c.j.c.m.Lobby [clientInboundChannel-264] Board state updated: [, , , , bK, , , , bP, bP, , , bB, wN, bP, bP, , , , , , , , bN, , , , wP, bP, , , , , bN, , bR, wP, , , wP, wP, , , , , bB, , , wR, wP, bR, , , , , wR, , wN, wB, wK, , bQ, , ]
+2025-03-18 19:42:36,465 INFO c.j.c.s.ChessService [clientInboundChannel-264] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: e3 to e4, next turn: black
+2025-03-18 19:42:43,913 INFO c.j.c.m.Lobby [clientInboundChannel-267] Board state updated: [, , , , bK, , , , bP, bP, , , bB, wN, bP, bP, , , , , , , , bN, , , , wP, bP, , , , , bN, , bR, wP, , , wP, wP, , , , , bB, , , wR, wP, , , bR, , , wR, , wN, wB, wK, , bQ, , ]
+2025-03-18 19:42:43,914 INFO c.j.c.m.Lobby [clientInboundChannel-267] Game over! Black wins by checkmate!
+2025-03-18 19:42:43,914 INFO c.j.c.s.ChessService [clientInboundChannel-267] Move made in lobby 38fa2771-f245-4906-8599-f3406910ccfe: c2 to e2, next turn: white
+2025-03-18 20:01:26,298 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-8] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 8 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(8)-CONNECTED(8)-DISCONNECT(4)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 366], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 170], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 482]
+2025-03-18 20:31:26,299 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-11] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 8 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(8)-CONNECTED(8)-DISCONNECT(4)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 366], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 170], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 987]
+2025-03-18 20:48:20,570 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 191658 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-18 20:48:20,571 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-18 20:48:20,572 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-18 20:48:21,253 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-18 20:48:21,259 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-18 20:48:21,261 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-18 20:48:21,262 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-18 20:48:21,295 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-18 20:48:21,296 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 686 ms
+2025-03-18 20:48:21,611 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-18 20:48:21,625 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-18 20:48:21,627 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-18 20:48:21,630 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@adcfad9]]
+2025-03-18 20:48:21,631 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-18 20:48:21,639 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 1.425 seconds (process running for 1.727)
+2025-03-18 20:48:33,529 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 20:48:33,530 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-03-18 20:48:33,531 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2025-03-18 20:48:38,231 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Creating lobby with name: lobby 1
+2025-03-18 20:48:38,233 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Lobby created with ID: 95b41771-7f47-437c-89d9-a60dbadd990a
+2025-03-18 20:48:38,233 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:48:38,233 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Created lobby: id=95b41771-7f47-437c-89d9-a60dbadd990a, name=lobby 1
+2025-03-18 20:48:38,274 INFO c.j.c.s.ChessService [clientInboundChannel-10] Player vsj0tzti joined lobby 95b41771-7f47-437c-89d9-a60dbadd990a
+2025-03-18 20:48:38,274 INFO c.j.c.s.ChessService [clientInboundChannel-10] Returning board state for lobby 95b41771-7f47-437c-89d9-a60dbadd990a: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:48:39,313 INFO c.j.c.m.Lobby [clientInboundChannel-13] White player set to: vsj0tzti
+2025-03-18 20:48:39,314 INFO c.j.c.s.ChessService [clientInboundChannel-13] Player vsj0tzti claimed white in lobby 95b41771-7f47-437c-89d9-a60dbadd990a
+2025-03-18 20:48:42,287 INFO c.j.c.s.ChessService [clientInboundChannel-25] Player ie4oyqhn joined lobby 95b41771-7f47-437c-89d9-a60dbadd990a
+2025-03-18 20:48:42,287 INFO c.j.c.s.ChessService [clientInboundChannel-25] Returning board state for lobby 95b41771-7f47-437c-89d9-a60dbadd990a: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:48:43,135 INFO c.j.c.m.Lobby [clientInboundChannel-28] Black player set to: ie4oyqhn
+2025-03-18 20:48:43,135 INFO c.j.c.s.ChessService [clientInboundChannel-28] Player ie4oyqhn claimed black in lobby 95b41771-7f47-437c-89d9-a60dbadd990a
+2025-03-18 20:48:48,900 INFO c.j.c.m.Lobby [clientInboundChannel-31] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:48:48,902 INFO c.j.c.s.ChessService [clientInboundChannel-31] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: g2 to g3, next turn: black
+2025-03-18 20:49:17,755 INFO c.j.c.m.Lobby [clientInboundChannel-3] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , , , , , , , bP, , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:49:17,756 INFO c.j.c.s.ChessService [clientInboundChannel-3] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: b7 to b5, next turn: white
+2025-03-18 20:49:21,616 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-15] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 32, active threads = 0, queued tasks = 0, completed tasks = 36], outboundChannel[pool size = 12, active threads = 0, queued tasks = 0, completed tasks = 12], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 12]
+2025-03-18 20:49:22,657 INFO c.j.c.m.Lobby [clientInboundChannel-6] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , , , , , , , bP, , , , , , , , , , , , , , , , , , , , wN, wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:49:22,658 INFO c.j.c.s.ChessService [clientInboundChannel-6] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: g1 to f3, next turn: black
+2025-03-18 20:49:29,851 INFO c.j.c.m.Lobby [clientInboundChannel-7] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, bN, , , , , , , , , bP, , , , , , , , , , , , , , , , , , , , wN, wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:49:29,852 INFO c.j.c.s.ChessService [clientInboundChannel-7] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: b8 to a6, next turn: white
+2025-03-18 20:49:33,805 INFO c.j.c.m.Lobby [clientInboundChannel-12] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, bN, , , , , , , , , bP, , , wN, , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:49:33,806 INFO c.j.c.s.ChessService [clientInboundChannel-12] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: f3 to e5, next turn: black
+2025-03-18 20:49:37,036 INFO c.j.c.m.Lobby [clientInboundChannel-15] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , , , , , , , bP, , , wN, , , , , bN, , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:49:37,037 INFO c.j.c.s.ChessService [clientInboundChannel-15] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: a6 to b4, next turn: white
+2025-03-18 20:49:45,522 WARN c.j.c.s.ChessService [clientInboundChannel-33] Invalid move from e5 to c5 by player vsj0tzti in lobby 95b41771-7f47-437c-89d9-a60dbadd990a
+2025-03-18 20:49:49,141 INFO c.j.c.m.Lobby [clientInboundChannel-36] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , , , , , , , bP, , , , , , , , bN, wN, , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:49:49,141 INFO c.j.c.s.ChessService [clientInboundChannel-36] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: e5 to c4, next turn: black
+2025-03-18 20:49:52,656 INFO c.j.c.m.Lobby [clientInboundChannel-39] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , , , , , , , bP, , , , , , , , , wN, , , , , , , , , , , , wP, , bN, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:49:52,657 INFO c.j.c.s.ChessService [clientInboundChannel-39] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: b4 to a2, next turn: white
+2025-03-18 20:49:55,745 INFO c.j.c.m.Lobby [clientInboundChannel-42] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , wN, , , , , , bP, , , , , , , , , , , , , , , , , , , , , wP, , bN, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:49:55,746 INFO c.j.c.s.ChessService [clientInboundChannel-42] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: c4 to d6, next turn: black
+2025-03-18 20:49:59,850 INFO c.j.c.m.Lobby [clientInboundChannel-45] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , wN, , , , , , , , , , , , , , bP, , , , , , , , , , , , , wP, , bN, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:49:59,851 INFO c.j.c.s.ChessService [clientInboundChannel-45] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: b5 to b4, next turn: white
+2025-03-18 20:50:11,729 INFO c.j.c.m.Lobby [clientInboundChannel-48] Board state updated: [bR, , bB, bQ, wN, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , bP, , , , , , , , , , , , , wP, , bN, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:50:11,729 INFO c.j.c.m.Lobby [clientInboundChannel-48] Game over! Black king captured. White wins!
+2025-03-18 20:50:11,729 INFO c.j.c.s.ChessService [clientInboundChannel-48] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: d6 to e8, next turn: black
+2025-03-18 20:50:17,338 INFO c.j.c.m.Lobby [clientInboundChannel-51] Board state updated: [bR, , bB, bQ, wN, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , bP, , , , , wP, , bN, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:50:17,339 INFO c.j.c.m.Lobby [clientInboundChannel-51] Game over! Black king captured. White wins!
+2025-03-18 20:50:17,339 INFO c.j.c.s.ChessService [clientInboundChannel-51] Move made in lobby 95b41771-7f47-437c-89d9-a60dbadd990a: b4 to b3, next turn: white
+2025-03-18 20:53:29,023 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Creating lobby with name: lobby 2
+2025-03-18 20:53:29,024 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Lobby created with ID: 5346fc9e-57f9-4438-92be-6d547f5e0000
+2025-03-18 20:53:29,024 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:53:29,025 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Created lobby: id=5346fc9e-57f9-4438-92be-6d547f5e0000, name=lobby 2
+2025-03-18 20:53:29,037 INFO c.j.c.s.ChessService [clientInboundChannel-68] Player 5d042vfl joined lobby 5346fc9e-57f9-4438-92be-6d547f5e0000
+2025-03-18 20:53:29,037 INFO c.j.c.s.ChessService [clientInboundChannel-68] Returning board state for lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:53:30,087 INFO c.j.c.m.Lobby [clientInboundChannel-86] White player set to: 5d042vfl
+2025-03-18 20:53:30,087 INFO c.j.c.s.ChessService [clientInboundChannel-86] Player 5d042vfl claimed white in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000
+2025-03-18 20:53:34,029 INFO c.j.c.s.ChessService [clientInboundChannel-54] Player mvta1jbr joined lobby 5346fc9e-57f9-4438-92be-6d547f5e0000
+2025-03-18 20:53:34,029 INFO c.j.c.s.ChessService [clientInboundChannel-54] Returning board state for lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:53:35,013 INFO c.j.c.m.Lobby [clientInboundChannel-57] Black player set to: mvta1jbr
+2025-03-18 20:53:35,013 INFO c.j.c.s.ChessService [clientInboundChannel-57] Player mvta1jbr claimed black in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000
+2025-03-18 20:53:37,757 INFO c.j.c.m.Lobby [clientInboundChannel-62] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:53:37,758 INFO c.j.c.s.ChessService [clientInboundChannel-62] Move made in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: g2 to g3, next turn: black
+2025-03-18 20:53:40,756 INFO c.j.c.m.Lobby [clientInboundChannel-65] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:53:40,756 INFO c.j.c.s.ChessService [clientInboundChannel-65] Move made in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: b8 to c6, next turn: white
+2025-03-18 20:53:43,834 INFO c.j.c.m.Lobby [clientInboundChannel-70] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , , , , , , , , wN, wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:53:43,834 INFO c.j.c.s.ChessService [clientInboundChannel-70] Move made in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: g1 to f3, next turn: black
+2025-03-18 20:53:48,288 INFO c.j.c.m.Lobby [clientInboundChannel-88] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , bN, , , , , , , , , , , , , , , , , wN, wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:53:48,289 INFO c.j.c.s.ChessService [clientInboundChannel-88] Move made in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: c6 to e5, next turn: white
+2025-03-18 20:54:00,105 INFO c.j.c.m.Lobby [clientInboundChannel-75] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , bN, , , , , , , wN, , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:54:00,106 INFO c.j.c.s.ChessService [clientInboundChannel-75] Move made in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: f3 to d4, next turn: black
+2025-03-18 20:54:03,795 INFO c.j.c.m.Lobby [clientInboundChannel-89] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , wN, , , , , , , , bN, , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:54:03,796 INFO c.j.c.s.ChessService [clientInboundChannel-89] Move made in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: e5 to d3, next turn: white
+2025-03-18 20:54:07,459 INFO c.j.c.m.Lobby [clientInboundChannel-77] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , wN, , , , , , , , , , , , , , , , , , , , , , , bN, , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:54:07,459 INFO c.j.c.s.ChessService [clientInboundChannel-77] Move made in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: d4 to e6, next turn: black
+2025-03-18 20:54:12,156 INFO c.j.c.m.Lobby [clientInboundChannel-81] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , wN, , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, bN, wB, , wR]
+2025-03-18 20:54:12,156 INFO c.j.c.m.Lobby [clientInboundChannel-81] Game over! White king captured. Black wins!
+2025-03-18 20:54:12,156 INFO c.j.c.s.ChessService [clientInboundChannel-81] Move made in lobby 5346fc9e-57f9-4438-92be-6d547f5e0000: d3 to e1, next turn: white
+2025-03-18 20:55:15,623 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 201433 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-18 20:55:15,624 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-18 20:55:15,625 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-18 20:55:16,372 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-18 20:55:16,380 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-18 20:55:16,382 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-18 20:55:16,383 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-18 20:55:16,422 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-18 20:55:16,423 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 749 ms
+2025-03-18 20:55:16,875 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-18 20:55:16,895 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-18 20:55:16,899 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-18 20:55:16,903 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@54089484]]
+2025-03-18 20:55:16,904 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-18 20:55:16,915 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 1.72 seconds (process running for 2.104)
+2025-03-18 20:55:21,844 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 20:55:21,845 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-03-18 20:55:21,846 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2025-03-18 20:55:25,716 INFO c.j.c.s.ChessService [http-nio-8080-exec-5] Creating lobby with name: lobby 1
+2025-03-18 20:55:25,717 INFO c.j.c.m.Lobby [http-nio-8080-exec-5] Lobby created with ID: d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7
+2025-03-18 20:55:25,718 INFO c.j.c.m.Lobby [http-nio-8080-exec-5] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:55:25,718 INFO c.j.c.s.ChessService [http-nio-8080-exec-5] Created lobby: id=d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7, name=lobby 1
+2025-03-18 20:55:25,754 INFO c.j.c.s.ChessService [clientInboundChannel-10] Player 44p4ljbg joined lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7
+2025-03-18 20:55:25,755 INFO c.j.c.s.ChessService [clientInboundChannel-10] Returning board state for lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:55:28,696 INFO c.j.c.s.ChessService [clientInboundChannel-22] Player 5qcbjsb5 joined lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7
+2025-03-18 20:55:28,696 INFO c.j.c.s.ChessService [clientInboundChannel-22] Returning board state for lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:55:29,728 INFO c.j.c.m.Lobby [clientInboundChannel-25] Black player set to: 5qcbjsb5
+2025-03-18 20:55:29,728 INFO c.j.c.s.ChessService [clientInboundChannel-25] Player 5qcbjsb5 claimed black in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7
+2025-03-18 20:55:35,864 INFO c.j.c.m.Lobby [clientInboundChannel-31] White player set to: 44p4ljbg
+2025-03-18 20:55:35,864 INFO c.j.c.s.ChessService [clientInboundChannel-31] Player 44p4ljbg claimed white in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7
+2025-03-18 20:55:39,560 INFO c.j.c.m.Lobby [clientInboundChannel-6] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , wP, , , , , , , , , , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:55:39,561 INFO c.j.c.s.ChessService [clientInboundChannel-6] Move made in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: g2 to g4, next turn: black
+2025-03-18 20:55:42,678 INFO c.j.c.m.Lobby [clientInboundChannel-8] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , wP, , , , , , , , , , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:55:42,679 INFO c.j.c.s.ChessService [clientInboundChannel-8] Move made in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: b8 to c6, next turn: white
+2025-03-18 20:55:46,783 INFO c.j.c.m.Lobby [clientInboundChannel-11] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , wP, , , , , , , wN, , , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:55:46,784 INFO c.j.c.s.ChessService [clientInboundChannel-11] Move made in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: g1 to f3, next turn: black
+2025-03-18 20:55:49,526 INFO c.j.c.m.Lobby [clientInboundChannel-15] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , bN, , , wP, , , , , , , wN, , , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:55:49,527 INFO c.j.c.s.ChessService [clientInboundChannel-15] Move made in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: c6 to d4, next turn: white
+2025-03-18 20:55:52,641 INFO c.j.c.m.Lobby [clientInboundChannel-17] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , wN, , , , , bN, , , wP, , , , , , , , , , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:55:52,642 INFO c.j.c.s.ChessService [clientInboundChannel-17] Move made in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: f3 to g5, next turn: black
+2025-03-18 20:55:56,061 INFO c.j.c.m.Lobby [clientInboundChannel-20] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , wN, , , , , , , , wP, , , , , , , bN, , , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:55:56,062 INFO c.j.c.s.ChessService [clientInboundChannel-20] Move made in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: d4 to f3, next turn: white
+2025-03-18 20:55:59,526 INFO c.j.c.m.Lobby [clientInboundChannel-24] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , wN, , , , , , , , , , , , , , , , , , wP, , , , , , , bN, , , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:55:59,527 INFO c.j.c.s.ChessService [clientInboundChannel-24] Move made in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: g5 to e6, next turn: black
+2025-03-18 20:56:02,429 INFO c.j.c.m.Lobby [clientInboundChannel-27] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , wN, , , , , , , , , , , , , , , , , , wP, , , , , , , , , , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, bN, wB, , wR]
+2025-03-18 20:56:02,429 INFO c.j.c.m.Lobby [clientInboundChannel-27] Game over! White king captured. Black wins!
+2025-03-18 20:56:02,429 INFO c.j.c.s.ChessService [clientInboundChannel-27] Move made in lobby d3d36d52-1eb3-4a73-b3cd-feb0a9f683c7: f3 to e1, next turn: white
+2025-03-18 20:56:16,877 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-3] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 32, active threads = 0, queued tasks = 0, completed tasks = 60], outboundChannel[pool size = 29, active threads = 0, queued tasks = 0, completed tasks = 29], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 11]
+2025-03-18 20:57:49,622 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 205483 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-18 20:57:49,624 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-18 20:57:49,625 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-18 20:57:50,472 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-18 20:57:50,480 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-18 20:57:50,481 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-18 20:57:50,482 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-18 20:57:50,532 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-18 20:57:50,534 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 865 ms
+2025-03-18 20:57:50,997 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-18 20:57:51,010 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-18 20:57:51,013 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-18 20:57:51,015 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@65fe2691]]
+2025-03-18 20:57:51,016 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-18 20:57:51,027 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 2.039 seconds (process running for 3.121)
+2025-03-18 20:57:53,383 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 20:57:53,383 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-03-18 20:57:53,384 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2025-03-18 20:57:54,087 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Creating lobby with name: Unnamed Lobby
+2025-03-18 20:57:54,089 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Lobby created with ID: 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 20:57:54,089 INFO c.j.c.m.Lobby [http-nio-8080-exec-6] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:57:54,089 INFO c.j.c.s.ChessService [http-nio-8080-exec-6] Created lobby: id=79451ee5-e217-4a56-aa2c-17f56b87a3fa, name=Unnamed Lobby
+2025-03-18 20:57:54,140 INFO c.j.c.s.ChessService [clientInboundChannel-10] Player fbhp3gxk joined lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 20:57:54,141 INFO c.j.c.s.ChessService [clientInboundChannel-10] Returning board state for lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:57:55,786 INFO c.j.c.m.Lobby [clientInboundChannel-13] White player set to: fbhp3gxk
+2025-03-18 20:57:55,786 INFO c.j.c.s.ChessService [clientInboundChannel-13] Player fbhp3gxk claimed white in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 20:58:00,685 INFO c.j.c.s.ChessService [clientInboundChannel-25] Player i2sznjhn joined lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 20:58:00,685 INFO c.j.c.s.ChessService [clientInboundChannel-25] Returning board state for lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:58:06,518 INFO c.j.c.m.Lobby [clientInboundChannel-28] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:58:06,519 INFO c.j.c.s.ChessService [clientInboundChannel-28] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: g2 to g3, next turn: black
+2025-03-18 20:58:08,764 INFO c.j.c.m.Lobby [clientInboundChannel-31] Black player set to: i2sznjhn
+2025-03-18 20:58:08,765 INFO c.j.c.s.ChessService [clientInboundChannel-31] Player i2sznjhn claimed black in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 20:58:11,215 INFO c.j.c.m.Lobby [clientInboundChannel-3] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 20:58:11,215 INFO c.j.c.s.ChessService [clientInboundChannel-3] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: b8 to c6, next turn: white
+2025-03-18 20:58:15,856 INFO c.j.c.m.Lobby [clientInboundChannel-4] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , bN, , , , , , , , , , , , , , , , , , , , , , , , , , , wN, wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:58:15,856 INFO c.j.c.s.ChessService [clientInboundChannel-4] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: g1 to f3, next turn: black
+2025-03-18 20:58:23,390 INFO c.j.c.m.Lobby [clientInboundChannel-8] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , bN, , , , , , , , , , , , wN, wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:58:23,391 INFO c.j.c.s.ChessService [clientInboundChannel-8] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: c6 to b4, next turn: white
+2025-03-18 20:58:33,309 INFO c.j.c.m.Lobby [clientInboundChannel-12] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , bN, , , , , , wN, , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:58:33,310 INFO c.j.c.s.ChessService [clientInboundChannel-12] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: f3 to h4, next turn: black
+2025-03-18 20:58:38,115 INFO c.j.c.m.Lobby [clientInboundChannel-15] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , wN, , , , bN, , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:58:38,116 INFO c.j.c.s.ChessService [clientInboundChannel-15] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: b4 to d3, next turn: white
+2025-03-18 20:58:50,407 INFO c.j.c.m.Lobby [clientInboundChannel-18] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , wN, , , , , , , , , , , , , , , , , , , , , bN, , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:58:50,409 INFO c.j.c.s.ChessService [clientInboundChannel-18] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: h4 to g6, next turn: black
+2025-03-18 20:58:51,001 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-13] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 32, active threads = 0, queued tasks = 0, completed tasks = 51], outboundChannel[pool size = 22, active threads = 0, queued tasks = 0, completed tasks = 22], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 12]
+2025-03-18 20:59:46,216 INFO c.j.c.m.Lobby [clientInboundChannel-33] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , wN, , , , , , , , , , , bN, , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:59:46,217 INFO c.j.c.s.ChessService [clientInboundChannel-33] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: d3 to b4, next turn: white
+2025-03-18 20:59:55,069 INFO c.j.c.m.Lobby [clientInboundChannel-36] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , wN, , , , , bN, , , , , , , , , , , , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:59:55,070 INFO c.j.c.s.ChessService [clientInboundChannel-36] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: g6 to e5, next turn: black
+2025-03-18 20:59:58,206 INFO c.j.c.m.Lobby [clientInboundChannel-39] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , wN, , , , , , , , , , , , , , , bN, , , wP, , wP, wP, wP, wP, wP, wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 20:59:58,207 INFO c.j.c.s.ChessService [clientInboundChannel-39] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: b4 to d3, next turn: white
+2025-03-18 21:00:01,621 WARN c.j.c.s.ChessService [clientInboundChannel-42] Move from e5 to c6 by player fbhp3gxk in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:00:03,196 WARN c.j.c.s.ChessService [clientInboundChannel-45] Move from e5 to c6 by player fbhp3gxk in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:00:04,444 WARN c.j.c.s.ChessService [clientInboundChannel-48] Move from e5 to c6 by player fbhp3gxk in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:00:05,726 WARN c.j.c.s.ChessService [clientInboundChannel-51] Move from e5 to c6 by player fbhp3gxk in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:00:11,659 WARN c.j.c.s.ChessService [clientInboundChannel-54] Move from e2 to e3 by player fbhp3gxk in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:00:12,701 INFO c.j.c.m.Lobby [clientInboundChannel-57] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , wN, , , , , , , , , , , , , , , wP, , , wP, , wP, wP, wP, wP, , wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 21:00:12,702 INFO c.j.c.s.ChessService [clientInboundChannel-57] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: e2 to d3, next turn: black
+2025-03-18 21:00:24,197 INFO c.j.c.m.Lobby [clientInboundChannel-60] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , bP, bP, , , , , , bP, , , , , , , wN, , , , , , , , , , , , , , , wP, , , wP, , wP, wP, wP, wP, , wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 21:00:24,198 INFO c.j.c.s.ChessService [clientInboundChannel-60] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: f7 to f6, next turn: white
+2025-03-18 21:00:31,148 INFO c.j.c.m.Lobby [clientInboundChannel-63] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , bP, bP, , , , , , bP, , , , , , , wN, , , , , , , wP, , , , , , , , , , , wP, , wP, wP, wP, wP, , wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 21:00:31,148 INFO c.j.c.s.ChessService [clientInboundChannel-63] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: d3 to d4, next turn: black
+2025-03-18 21:00:34,393 INFO c.j.c.m.Lobby [clientInboundChannel-35] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , bP, bP, , , , , , bP, , , , , , , wN, , , , , , , wP, , , , , , , , , , , wP, , wP, wP, wP, wP, , wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 21:00:34,393 INFO c.j.c.s.ChessService [clientInboundChannel-35] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: a8 to b8, next turn: white
+2025-03-18 21:00:41,739 INFO c.j.c.m.Lobby [clientInboundChannel-38] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , bP, bP, , , , , , bP, , , , , , , wN, , , , , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 21:00:41,740 INFO c.j.c.s.ChessService [clientInboundChannel-38] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: d2 to d3, next turn: black
+2025-03-18 21:00:44,174 INFO c.j.c.m.Lobby [clientInboundChannel-41] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , bP, bP, , , , , , bP, , , , , , , wN, , , , , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 21:00:44,175 INFO c.j.c.s.ChessService [clientInboundChannel-41] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: b8 to a8, next turn: white
+2025-03-18 21:00:51,983 INFO c.j.c.m.Lobby [clientInboundChannel-44] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , bP, bP, , , , , , bP, , , , , , , wN, , , , , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , wB, wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:00:51,983 INFO c.j.c.s.ChessService [clientInboundChannel-44] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: f1 to e2, next turn: black
+2025-03-18 21:00:54,249 INFO c.j.c.m.Lobby [clientInboundChannel-47] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , bP, bP, , , , , , bP, , , , , , , wN, , , , , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , wB, wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:00:54,250 INFO c.j.c.s.ChessService [clientInboundChannel-47] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: a8 to b8, next turn: white
+2025-03-18 21:00:58,524 INFO c.j.c.m.Lobby [clientInboundChannel-65] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , bP, bP, , , , , , bP, , , , , , , wN, , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:00:58,525 INFO c.j.c.s.ChessService [clientInboundChannel-65] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: e2 to h5, next turn: black
+2025-03-18 21:01:06,064 WARN c.j.c.s.ChessService [clientInboundChannel-67] Move from e8 to f7 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:01:23,741 INFO c.j.c.m.Lobby [clientInboundChannel-70] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , , bP, , , , , , bP, bP, , , , , , wN, , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:01:23,741 INFO c.j.c.s.ChessService [clientInboundChannel-70] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: g7 to g6, next turn: white
+2025-03-18 21:01:33,157 INFO c.j.c.m.Lobby [clientInboundChannel-73] Board state updated: [, bR, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , , bP, , , , , , bP, wN, , , , , , , , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:01:33,157 INFO c.j.c.s.ChessService [clientInboundChannel-73] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: e5 to g6, next turn: black
+2025-03-18 21:01:54,841 INFO c.j.c.m.Lobby [clientInboundChannel-76] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , , bP, , , , , , bP, wN, , , , , , , , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:01:54,841 INFO c.j.c.s.ChessService [clientInboundChannel-76] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: b8 to a8, next turn: white
+2025-03-18 21:02:14,587 INFO c.j.c.m.Lobby [clientInboundChannel-79] Board state updated: [bR, , bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, , , bP, , , , , , bP, , , , , , , wN, , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:02:14,588 INFO c.j.c.s.ChessService [clientInboundChannel-79] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: g6 to e5, next turn: black
+2025-03-18 21:02:46,436 WARN c.j.c.s.ChessService [clientInboundChannel-82] Move from e8 to f7 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:02:52,359 WARN c.j.c.s.ChessService [clientInboundChannel-85] Invalid move from f8 to f7 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 21:02:55,422 WARN c.j.c.s.ChessService [clientInboundChannel-88] Move from g8 to f6 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:02:56,781 WARN c.j.c.s.ChessService [clientInboundChannel-91] Move from h7 to h6 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:02:57,946 WARN c.j.c.s.ChessService [clientInboundChannel-94] Invalid move from h8 to g7 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 21:08:10,184 WARN c.j.c.s.ChessService [clientInboundChannel-97] Move from e7 to e6 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:08:11,369 WARN c.j.c.s.ChessService [clientInboundChannel-100] Move from d7 to d6 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:08:14,780 WARN c.j.c.s.ChessService [clientInboundChannel-103] Move from e8 to f7 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:08:15,734 INFO c.j.c.m.Lobby [clientInboundChannel-106] Board state updated: [bR, , bB, bK, , bB, bN, bR, bP, bP, bP, bP, bP, , , bP, , , , , , bP, , , , , , , wN, , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:08:15,734 INFO c.j.c.s.ChessService [clientInboundChannel-106] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: e8 to d8, next turn: white
+2025-03-18 21:10:12,730 INFO c.j.c.m.Lobby [clientInboundChannel-109] Board state updated: [bR, , bB, bK, , bB, bN, bR, bP, bP, bP, bP, bP, , , bP, , , wN, , , bP, , , , , , , , , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:10:12,731 INFO c.j.c.s.ChessService [clientInboundChannel-109] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: e5 to c6, next turn: black
+2025-03-18 21:10:16,719 WARN c.j.c.s.ChessService [clientInboundChannel-112] Move from d7 to d6 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:10:18,608 WARN c.j.c.s.ChessService [clientInboundChannel-115] Move from d8 to e8 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:10:21,496 INFO c.j.c.m.Lobby [clientInboundChannel-118] Board state updated: [bR, , bB, bK, , bB, bN, bR, bP, , bP, bP, bP, , , bP, , , bP, , , bP, , , , , , , , , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, wN, wB, wQ, wK, , , wR]
+2025-03-18 21:10:21,496 INFO c.j.c.s.ChessService [clientInboundChannel-118] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: b7 to c6, next turn: white
+2025-03-18 21:10:27,106 INFO c.j.c.m.Lobby [clientInboundChannel-121] Board state updated: [bR, , bB, bK, , bB, bN, bR, bP, , bP, bP, bP, , , bP, , , bP, , , bP, , , , , , , , , , wB, , , , wP, , , , , , , wN, wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, , wB, wQ, wK, , , wR]
+2025-03-18 21:10:27,106 INFO c.j.c.s.ChessService [clientInboundChannel-121] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: b1 to c3, next turn: black
+2025-03-18 21:10:34,343 INFO c.j.c.m.Lobby [clientInboundChannel-124] Board state updated: [, bR, bB, bK, , bB, bN, bR, bP, , bP, bP, bP, , , bP, , , bP, , , bP, , , , , , , , , , wB, , , , wP, , , , , , , wN, wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, , wB, wQ, wK, , , wR]
+2025-03-18 21:10:34,343 INFO c.j.c.s.ChessService [clientInboundChannel-124] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: a8 to b8, next turn: white
+2025-03-18 21:10:39,383 INFO c.j.c.m.Lobby [clientInboundChannel-127] Board state updated: [, bR, bB, bK, , bB, bN, bR, bP, , bP, bP, bP, , , bP, , , bP, , , bP, , , , wN, , , , , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, , wB, wQ, wK, , , wR]
+2025-03-18 21:10:39,384 INFO c.j.c.s.ChessService [clientInboundChannel-127] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: c3 to b5, next turn: black
+2025-03-18 21:10:44,439 INFO c.j.c.m.Lobby [clientInboundChannel-130] Board state updated: [, , bB, bK, , bB, bN, bR, bP, , bP, bP, bP, , , bP, , , bP, , , bP, , , , bR, , , , , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, , wB, wQ, wK, , , wR]
+2025-03-18 21:10:44,440 INFO c.j.c.s.ChessService [clientInboundChannel-130] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: b8 to b5, next turn: white
+2025-03-18 21:10:57,294 INFO c.j.c.m.Lobby [clientInboundChannel-133] Board state updated: [, , bB, bK, , bB, bN, bR, bP, , bP, bP, bP, , , bP, , , bP, , , bP, , , , bR, , , , , , wB, , , , wP, , , wQ, , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, , wB, , wK, , , wR]
+2025-03-18 21:10:57,294 INFO c.j.c.s.ChessService [clientInboundChannel-133] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: d1 to g4, next turn: black
+2025-03-18 21:11:04,435 INFO c.j.c.m.Lobby [clientInboundChannel-136] Board state updated: [, , bB, bK, , bB, bN, bR, bP, , bP, , bP, , , bP, , , bP, , , bP, , , , bR, , bP, , , , wB, , , , wP, , , wQ, , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, , wB, , wK, , , wR]
+2025-03-18 21:11:04,435 INFO c.j.c.s.ChessService [clientInboundChannel-136] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: d7 to d5, next turn: white
+2025-03-18 21:11:08,739 INFO c.j.c.m.Lobby [clientInboundChannel-139] Board state updated: [, , wQ, bK, , bB, bN, bR, bP, , bP, , bP, , , bP, , , bP, , , bP, , , , bR, , bP, , , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, , wB, , wK, , , wR]
+2025-03-18 21:11:08,740 INFO c.j.c.s.ChessService [clientInboundChannel-139] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: g4 to c8, next turn: black
+2025-03-18 21:11:16,581 WARN c.j.c.s.ChessService [clientInboundChannel-141] Move from f8 to h6 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:11:19,733 WARN c.j.c.s.ChessService [clientInboundChannel-143] Move from d8 to d7 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:11:20,929 WARN c.j.c.s.ChessService [clientInboundChannel-146] Move from d8 to e8 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa does not get out of check
+2025-03-18 21:11:22,243 WARN c.j.c.s.ChessService [clientInboundChannel-148] Player i2sznjhn attempted to capture their own piece in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 21:11:23,569 WARN c.j.c.s.ChessService [clientInboundChannel-123] Player i2sznjhn attempted to capture their own piece in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 21:11:24,538 INFO c.j.c.m.Lobby [clientInboundChannel-126] Board state updated: [, , bK, , , bB, bN, bR, bP, , bP, , bP, , , bP, , , bP, , , bP, , , , bR, , bP, , , , wB, , , , wP, , , , , , , , wP, , , wP, , wP, wP, wP, , , wP, , wP, wR, , wB, , wK, , , wR]
+2025-03-18 21:11:24,539 INFO c.j.c.s.ChessService [clientInboundChannel-126] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: d8 to c8, next turn: white
+2025-03-18 21:28:51,002 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-9] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 195], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 118], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 493]
+2025-03-18 21:43:23,524 INFO c.j.c.m.Lobby [clientInboundChannel-150] Board state updated: [, , bK, , , bB, bN, bR, bP, , bP, , bP, , , bP, , , bP, , , bP, , , , bR, , bP, , , , wB, , , , wP, , wP, , , , , , wP, , , wP, , wP, wP, wP, , , , , wP, wR, , wB, , wK, , , wR]
+2025-03-18 21:43:23,524 INFO c.j.c.s.ChessService [clientInboundChannel-150] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: f2 to f4, next turn: black
+2025-03-18 21:43:37,739 WARN c.j.c.s.ChessService [clientInboundChannel-153] Invalid move from d5 to e4 by player i2sznjhn in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 21:43:39,047 INFO c.j.c.m.Lobby [clientInboundChannel-156] Board state updated: [, , bK, , , bB, bN, bR, bP, , bP, , bP, , , bP, , , bP, , , , , , , bR, , bP, , bP, , wB, , , , wP, , wP, , , , , , wP, , , wP, , wP, wP, wP, , , , , wP, wR, , wB, , wK, , , wR]
+2025-03-18 21:43:39,048 INFO c.j.c.s.ChessService [clientInboundChannel-156] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: f6 to f5, next turn: white
+2025-03-18 21:43:44,322 WARN c.j.c.s.ChessService [clientInboundChannel-159] Invalid move from f4 to e5 by player fbhp3gxk in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa
+2025-03-18 21:47:36,875 INFO c.j.c.m.Lobby [clientInboundChannel-162] Board state updated: [, , bK, , , bB, bN, bR, bP, , bP, , bP, , , bP, , , bP, , , , , , , bR, , bP, , bP, , wB, , , , wP, , wP, , , , , , wP, , , wP, , wP, wP, wP, , , , , wP, wR, , wB, , wK, , wR, ]
+2025-03-18 21:47:36,876 INFO c.j.c.s.ChessService [clientInboundChannel-162] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: h1 to g1, next turn: black
+2025-03-18 21:47:47,711 INFO c.j.c.m.Lobby [clientInboundChannel-165] Board state updated: [, , bK, , , bB, bN, bR, bP, , bP, , bP, , , bP, , , , , , , , , , bR, bP, bP, , bP, , wB, , , , wP, , wP, , , , , , wP, , , wP, , wP, wP, wP, , , , , wP, wR, , wB, , wK, , wR, ]
+2025-03-18 21:47:47,711 INFO c.j.c.s.ChessService [clientInboundChannel-165] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: c6 to c5, next turn: white
+2025-03-18 21:47:53,752 INFO c.j.c.m.Lobby [clientInboundChannel-168] Board state updated: [, , bK, , , bB, bN, bR, bP, , bP, , bP, , , bP, , , , , , , , , , bR, bP, bP, , bP, , wB, , , , wP, , wP, , , , , , wP, , , wP, , wP, wP, wP, , , , , wP, wR, , wB, , wK, , , wR]
+2025-03-18 21:47:53,752 INFO c.j.c.s.ChessService [clientInboundChannel-168] Move made in lobby 79451ee5-e217-4a56-aa2c-17f56b87a3fa: g1 to h1, next turn: black
+2025-03-18 21:54:03,931 INFO o.s.b.StartupInfoLogger [main] Starting ChessGameApplication using Java 17.0.14 with PID 260668 (/home/Jeremy/Documents/chess/backend/build/classes/java/main started by Jeremy in /home/Jeremy/Documents/chess)
+2025-03-18 21:54:03,933 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-03-18 21:54:03,934 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-18 21:54:04,730 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-18 21:54:04,740 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-18 21:54:04,743 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-03-18 21:54:04,744 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-18 21:54:04,793 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-18 21:54:04,795 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 818 ms
+2025-03-18 21:54:05,250 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-18 21:54:05,268 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-03-18 21:54:05,271 INFO o.s.c.l.CompositeLog [main] Starting...
+2025-03-18 21:54:05,274 INFO o.s.c.l.CompositeLog [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@16aed49f]]
+2025-03-18 21:54:05,275 INFO o.s.c.l.CompositeLog [main] Started.
+2025-03-18 21:54:05,286 INFO o.s.b.StartupInfoLogger [main] Started ChessGameApplication in 1.675 seconds (process running for 1.975)
+2025-03-18 21:54:19,409 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 21:54:19,409 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-03-18 21:54:19,410 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2025-03-18 21:54:24,671 INFO c.j.c.s.ChessService [http-nio-8080-exec-7] Creating lobby with name: Unnamed Lobby
+2025-03-18 21:54:24,673 INFO c.j.c.m.Lobby [http-nio-8080-exec-7] Lobby created with ID: a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:54:24,673 INFO c.j.c.m.Lobby [http-nio-8080-exec-7] Initial board state: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:54:24,673 INFO c.j.c.s.ChessService [http-nio-8080-exec-7] Created lobby: id=a39b9069-d291-403c-9d09-4333e28b2f19, name=Unnamed Lobby
+2025-03-18 21:54:24,741 INFO c.j.c.s.ChessService [clientInboundChannel-10] Player btwdwpr3 joined lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:54:24,742 INFO c.j.c.s.ChessService [clientInboundChannel-10] Returning board state for lobby a39b9069-d291-403c-9d09-4333e28b2f19: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:54:26,083 INFO c.j.c.m.Lobby [clientInboundChannel-13] White player set to: btwdwpr3
+2025-03-18 21:54:26,084 INFO c.j.c.s.ChessService [clientInboundChannel-13] Player btwdwpr3 claimed white in lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:54:29,252 INFO c.j.c.s.ChessService [clientInboundChannel-25] Player zalqdlqr joined lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:54:29,252 INFO c.j.c.s.ChessService [clientInboundChannel-25] Returning board state for lobby a39b9069-d291-403c-9d09-4333e28b2f19: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, wP, wP, wP, wP, wP, wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:54:30,022 INFO c.j.c.m.Lobby [clientInboundChannel-28] Black player set to: zalqdlqr
+2025-03-18 21:54:30,022 INFO c.j.c.s.ChessService [clientInboundChannel-28] Player zalqdlqr claimed black in lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:54:35,774 INFO c.j.c.m.Lobby [clientInboundChannel-31] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, bP, bP, bP, bP, bP, bP, bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:54:35,776 INFO c.j.c.s.ChessService [clientInboundChannel-31] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: f2 to f3, next turn: black
+2025-03-18 21:54:38,616 INFO c.j.c.m.Lobby [clientInboundChannel-3] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , , , , , , , , , wP, , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:54:38,617 INFO c.j.c.s.ChessService [clientInboundChannel-3] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: b7 to b6, next turn: white
+2025-03-18 21:54:42,091 INFO c.j.c.m.Lobby [clientInboundChannel-6] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , bP, , , , , , , , , , , , , , , , , , , , wP, , , , , , , , , , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:54:42,092 INFO c.j.c.s.ChessService [clientInboundChannel-6] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: f3 to f4, next turn: black
+2025-03-18 21:54:45,838 INFO c.j.c.m.Lobby [clientInboundChannel-7] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , , , , , , , bP, , , , , , , , , , , , wP, , , , , , , , , , , wP, wP, wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:54:45,839 INFO c.j.c.s.ChessService [clientInboundChannel-7] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: b6 to b5, next turn: white
+2025-03-18 21:54:49,671 INFO c.j.c.m.Lobby [clientInboundChannel-12] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, bP, bP, bP, bP, , , , , , , , , , bP, , , , , , , , wP, , , , wP, , , , , , , , , , , wP, , wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:54:49,672 INFO c.j.c.s.ChessService [clientInboundChannel-12] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: b2 to b4, next turn: black
+2025-03-18 21:54:52,528 WARN c.j.c.s.ChessService [clientInboundChannel-15] Invalid move from b5 to a4 by player zalqdlqr in lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:54:54,615 WARN c.j.c.s.ChessService [clientInboundChannel-18] Invalid move from b5 to c4 by player zalqdlqr in lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:54:56,748 WARN c.j.c.s.ChessService [clientInboundChannel-21] Invalid move from b5 to c4 by player zalqdlqr in lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:54:57,925 WARN c.j.c.s.ChessService [clientInboundChannel-22] Invalid move from b5 to c4 by player zalqdlqr in lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:55:05,260 INFO o.s.w.s.c.WebSocketMessageBrokerStats [MessageBroker-10] WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 32, active threads = 0, queued tasks = 0, completed tasks = 57], outboundChannel[pool size = 26, active threads = 0, queued tasks = 0, completed tasks = 26], sockJsScheduler[pool size = 16, active threads = 1, queued tasks = 3, completed tasks = 10]
+2025-03-18 21:55:08,842 INFO c.j.c.m.Lobby [clientInboundChannel-27] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, , bP, bP, bP, , , , , , , , , , bP, , , bP, , , , , wP, , , , wP, , , , , , , , , , , wP, , wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:55:08,842 INFO c.j.c.s.ChessService [clientInboundChannel-27] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: e7 to e5, next turn: white
+2025-03-18 21:55:17,773 INFO c.j.c.m.Lobby [clientInboundChannel-30] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, , bP, bP, bP, , , , , , , , , , bP, , , bP, wP, , , , wP, , , , , , , , , , , , , , , wP, , wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:55:17,773 INFO c.j.c.s.ChessService [clientInboundChannel-30] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: f4 to f5, next turn: black
+2025-03-18 21:55:24,984 INFO c.j.c.m.Lobby [clientInboundChannel-33] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, , bP, bP, bP, , , , , , , , , , bP, , , , wP, , , , wP, , , bP, , , , , , , , , , , , wP, , wP, wP, wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:55:24,984 INFO c.j.c.s.ChessService [clientInboundChannel-33] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: e5 to e4, next turn: white
+2025-03-18 21:55:29,059 INFO c.j.c.m.Lobby [clientInboundChannel-34] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, , bP, bP, bP, , , , , , , , , , bP, , , , wP, , , , wP, , wP, bP, , , , , , , , , , , , wP, , wP, , wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:55:29,060 INFO c.j.c.s.ChessService [clientInboundChannel-34] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: d2 to d4, next turn: black
+2025-03-18 21:55:32,211 WARN c.j.c.s.ChessService [clientInboundChannel-36] Invalid move from e4 to d3 by player zalqdlqr in lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:55:33,580 WARN c.j.c.s.ChessService [clientInboundChannel-4] Invalid move from e4 to d3 by player zalqdlqr in lobby a39b9069-d291-403c-9d09-4333e28b2f19
+2025-03-18 21:56:22,899 INFO c.j.c.m.Lobby [clientInboundChannel-39] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, , bP, bP, bP, , , , , , , , , , bP, , , , wP, , , , wP, , wP, , , , , , , , bP, , , , , wP, , wP, , wP, , wP, wP, wR, wN, wB, wQ, wK, wB, wN, wR]
+2025-03-18 21:56:22,899 INFO c.j.c.s.ChessService [clientInboundChannel-39] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: e4 to d3, next turn: white
+2025-03-18 21:57:18,700 INFO c.j.c.m.Lobby [clientInboundChannel-42] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, , bP, bP, bP, , , , , , , , , , bP, , , , wP, , , , wP, , wP, , , , , , , , bP, , wN, , , wP, , wP, , wP, , wP, wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 21:57:18,701 INFO c.j.c.s.ChessService [clientInboundChannel-42] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: g1 to f3, next turn: black
+2025-03-18 21:57:22,628 INFO c.j.c.m.Lobby [clientInboundChannel-45] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, , bP, , bP, , , , , , , , , , bP, , , , wP, bP, , , wP, , wP, , , , , , , , bP, , wN, , , wP, , wP, , wP, , wP, wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 21:57:22,629 INFO c.j.c.s.ChessService [clientInboundChannel-45] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: g7 to g5, next turn: white
+2025-03-18 21:57:25,183 INFO c.j.c.s.ChessService [clientInboundChannel-48] En passant capture in lobby a39b9069-d291-403c-9d09-4333e28b2f19: wP captures pawn at g5
+2025-03-18 21:57:25,184 INFO c.j.c.m.Lobby [clientInboundChannel-48] Board state updated: [bR, bN, bB, bQ, bK, bB, bN, bR, bP, , bP, bP, , bP, , bP, , , , , , , wP, , , bP, , , , , , , , wP, , wP, , , , , , , , bP, , wN, , , wP, , wP, , wP, , wP, wP, wR, wN, wB, wQ, wK, wB, , wR]
+2025-03-18 21:57:25,184 INFO c.j.c.s.ChessService [clientInboundChannel-48] Move made in lobby a39b9069-d291-403c-9d09-4333e28b2f19: f5 to g6, next turn: black

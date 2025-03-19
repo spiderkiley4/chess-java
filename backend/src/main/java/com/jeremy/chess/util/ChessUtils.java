@@ -11,4 +11,10 @@ public class ChessUtils {
 
         return rankIndex * 8 + fileIndex;
     }
+
+    public static String indexToNotation(int index) {
+        int file = index % 8;
+        int rank = 8 - (index / 8);
+        return String.valueOf((char)('a' + file)) + rank;
+    }
 }

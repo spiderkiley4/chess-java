@@ -34,8 +34,17 @@ public class MoveValidator {
 
         // Capture move
         if (toIndex == fromIndex + 7 * direction || toIndex == fromIndex + 9 * direction) {
+            // Regular capture
             if (!boardState.get(toIndex).isEmpty() && boardState.get(toIndex).charAt(0) != piece.charAt(0)) {
                 return true;
+            }
+            
+            // En passant capture
+            if (boardState.get(toIndex).isEmpty()) {
+                int capturedPawnIndex = toIndex - 8 * direction; // The square the captured pawn is on
+                if (boardState.get(capturedPawnIndex).equals(piece.charAt(0) == 'w' ? "bP" : "wP")) {
+                    return true;
+                }
             }
         }
 

@@ -10,6 +10,10 @@ const ChessBoard = ({ lobbyId }) => {
     const [players, setPlayers] = useState({ whitePlayerId: "", blackPlayerId: "" });
     const [chatMessages, setChatMessages] = useState([]);
     const [chatInput, setChatInput] = useState("");
+    const [gameOver, setGameOver] = useState(false);
+    const [winningTeam, setWinningTeam] = useState(null);
+    const [gameEndReason, setGameEndReason] = useState(null);
+    const [inCheck, setInCheck] = useState(false);
 
     const handleGameMessage = (message) => {
         console.log('Received game message:', message);
@@ -18,6 +22,18 @@ const ChessBoard = ({ lobbyId }) => {
         if (message.whiteTurn !== undefined) {
             console.log('Updating turn state:', message.whiteTurn);
             setIsWhiteTurn(message.whiteTurn);
+        }
+
+        // Update game end state if available
+        if (message.gameOver !== undefined) {
+            setGameOver(message.gameOver);
+            setWinningTeam(message.winningTeam);
+            setGameEndReason(message.gameEndReason);
+        }
+
+        // Update check status if available
+        if (message.inCheck !== undefined) {
+            setInCheck(message.inCheck);
         }
 
         if (message.type === "MOVE") {
@@ -233,6 +249,18 @@ const ChessBoard = ({ lobbyId }) => {
                         <div>
                             <p className="text-lg">You are playing as {playerColor}</p>
                             <p className="text-lg">Current turn: {isWhiteTurn ? "White" : "Black"}</p>
+                            {inCheck && !gameOver && (
+                                <div className="mt-2 p-2 bg-red-100 border border-red-200 rounded-md">
+                                    <p className="text-red-700 font-semibold">CHECK!</p>
+                                </div>
+                            )}
+                            {gameOver && (
+                                <div className="mt-3 p-4 bg-blue-100 border border-blue-200 rounded-md">
+                                    <p className="text-lg font-semibold">Game Over!</p>
+                                    <p>{winningTeam === "Draw" ? "Game ended in a draw" : `${winningTeam} wins!`}</p>
+                                    <p className="text-sm text-gray-600">Reason: {gameEndReason}</p>
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>
@@ -241,7 +269,7 @@ const ChessBoard = ({ lobbyId }) => {
                     onPieceDrop={handleMove}
                     onPromotionPieceSelect={handlePromotionPieceSelect}
                     boardOrientation={playerColor === "black" ? "black" : "white"}
-                    arePiecesDraggable={isPieceDraggable}
+                    arePiecesDraggable={!gameOver && isPieceDraggable}
                 />
             </div>
             <div className="flex-none w-72 flex flex-col h-[500px] border border-gray-200 rounded-lg bg-white">
@@ -341,21 +369,16 @@ const MainMenu = () => {
                         </button>
                     </div>
                     <h2 className="text-2xl font-bold mb-4">Available Lobbies</h2>
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 list-none">
                         {lobbies.map((lobby) => (
                             <li key={lobby.id}>
                                 <button 
                                     onClick={() => setLobbyId(lobby.id)}
                                     className="w-full text-left p-4 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 transition-colors duration-150"
                                 >
-                                    <span className="block text-lg font-semibold">{lobby.name}</span>
-                                    <span className="text-sm text-gray-600">
-                                        ID: {lobby.id.substring(0, 8)}
-                                        Players: {
-                                            (lobby.whitePlayerId ? 1 : 0) + 
-                                            (lobby.blackPlayerId ? 1 : 0)
-                                        }/2
-                                    </span>
+                                    <div className="block text-lg font-semibold m-2">{lobby.name}</div>
+                                    <div className="text-sm text-gray-600">ID: {lobby.id.substring(0, 8)}</div>
+                                    <div>Players: {(lobby.whitePlayerId ? 1 : 0) + (lobby.blackPlayerId ? 1 : 0)}/2</div>
                                 </button>
                             </li>
                         ))}

@@ -37,9 +37,24 @@ public class ChessWebSocketController {
             // Send lobby update after move
             sendLobbyUpdate();
             
-            // Get the updated turn state
-            boolean isWhiteTurn = chessService.isWhiteTurn(message.getLobbyId());
-            return new GameMessage(message.getLobbyId(), "MOVE", newState, isWhiteTurn);
+            // Get the lobby to check game end state and check status
+            Lobby lobby = chessService.getLobby(message.getLobbyId());
+            
+            // Return game state with end state information if available
+            GameMessage response = new GameMessage(
+                message.getLobbyId(),
+                "MOVE",
+                newState,
+                lobby.isWhiteTurn(),
+                lobby.isGameOver(),
+                lobby.getWinningTeam(),
+                lobby.getGameEndReason()
+            );
+            
+            // Set check status for the current player
+            response.setInCheck(lobby.isInCheck(lobby.isWhiteTurn()));
+            
+            return response;
         }
         return null;
     }
