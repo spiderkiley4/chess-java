@@ -49,21 +49,18 @@ jobs:
       working-directory: backend
       run: ./gradlew bootJar
 
-    - name: Upload JAR artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: chess-game
-        path: backend/build/libs/*.jar
-        if-no-files-found: error
-
-    - name: Create Release
+    - name: Generate Release Tag
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      uses: softprops/action-gh-release@v1
-      with:
-        files: backend/build/libs/*.jar
-        tag_name: v${{ github.run_number }}
-        name: Release v${{ github.run_number }}
-        draft: false
-        prerelease: false
+      id: tag
+      run: |
+        echo "tag_name=v$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
+
+    - name: Create GitHub Release
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release create ${{ steps.tag.outputs.tag_name }} \
+          --title "Release ${{ steps.tag.outputs.tag_name }}" \
+          --notes "Automated release" \
+          backend/build/libs/*.jar 
